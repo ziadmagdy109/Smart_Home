@@ -11,6 +11,8 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(360, 690),
       minTextAdapt: true,
+      splitScreenMode: true,
+      ensureScreenSize: true,
       builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
         initialRoute: Routes.onBoardingView,
