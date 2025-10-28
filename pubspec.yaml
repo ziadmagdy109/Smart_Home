@@ -13,12 +13,11 @@ dependencies:
   dio: ^5.9.0
   flutter:
     sdk: flutter
-  # State Managment
   flutter_bloc: ^9.1.1
-  # dependency injection
+  flutter_screenutil: ^5.9.3
   get_it: ^8.2.0
-  #local storage
   shared_preferences: ^2.5.3
+  smooth_page_indicator: ^1.2.1
 flutter_svg: ^2.2.1
 
 dev_dependencies:
@@ -29,9 +28,8 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/images_onboarding/
   # fonts:
   #   - family: Schyler
   #     fonts:
