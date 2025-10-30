@@ -70,33 +70,37 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                   ),
                   Spacer(),
                   // The circle behind indicator
-                  GestureDetector(
-                    onTap: () {
-                      if (currentIndex < pages.length - 1) {
-                        _pageController.nextPage(
-                          duration: const Duration(milliseconds: 500),
-                          curve: Curves.easeInOut,
-                        );
-                      } else {
-                        Navigator.pushReplacementNamed(
-                          context,
-                          Routes.homeSignInView,
-                        );
-                      }
-                    },
-                    child: Container(
-                      width: 56.w,
-                      height: 56.h,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: AppColors.myGreen.withOpacity(0.9),
-                      ),
-                      child: SizedBox(
-                        width: 8.w,
-                        height: 16.h,
-                        child: const Icon(
-                          Icons.arrow_forward_ios,
-                          color: AppColors.myWhite,
+                  IconButton(
+                    onPressed: () {},
+                    splashColor: AppColors.myGreen.withOpacity(0.2),
+                    icon: GestureDetector(
+                      onTap: () {
+                        if (currentIndex < pages.length - 1) {
+                          _pageController.nextPage(
+                            duration: const Duration(milliseconds: 500),
+                            curve: Curves.easeInOut,
+                          );
+                        } else {
+                          Navigator.pushReplacementNamed(
+                            context,
+                            Routes.homeSignInView,
+                          );
+                        }
+                      },
+                      child: Container(
+                        width: 56.w,
+                        height: 56.h,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: AppColors.myGreen.withOpacity(0.9),
+                        ),
+                        child: SizedBox(
+                          width: 8.w,
+                          height: 16.h,
+                          child: const Icon(
+                            Icons.arrow_forward_ios,
+                            color: AppColors.myWhite,
+                          ),
                         ),
                       ),
                     ),

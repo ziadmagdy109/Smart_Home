@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AlignWidget extends StatelessWidget {
-  const AlignWidget({super.key, required this.hight});
+class AlignShadowWidget extends StatelessWidget {
+  const AlignShadowWidget({super.key, required this.hight});
   final double hight;
 
   @override

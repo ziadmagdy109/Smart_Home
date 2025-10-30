@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_home/core/utils/app_text_styles.dart';
-import 'package:smart_home/features/onBoarding/presentation/widgets/align_widget.dart';
+import 'package:smart_home/features/onBoarding/presentation/widgets/align_shadow_widget.dart';
 
 class ThirdOnBoardingView extends StatelessWidget {
   const ThirdOnBoardingView({super.key});
@@ -20,10 +20,15 @@ class ThirdOnBoardingView extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(top: 25.h),
-          child: Image.asset("assets/images_onboarding/Image (2).png"),
+          padding: EdgeInsets.only(top: 20.h, right: 0.w),
+          child: Image(
+            image: AssetImage("assets/images_onboarding/Image (2).png"),
+            width: 375.w,
+            height: 390.h,
+            fit: BoxFit.contain,
+          ),
         ),
-        AlignWidget(hight: size.height * 0.5),
+        AlignShadowWidget(hight: size.height * 0.5),
         Padding(
           padding: EdgeInsets.only(bottom: 100.h, left: 20.w, right: 20.w),
           child: Column(
@@ -31,12 +36,12 @@ class ThirdOnBoardingView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Convenience",
+                "Automate",
                 style: AppTextStyles.style28.copyWith(color: Colors.white),
               ),
               SizedBox(height: 6.h),
               Text(
-                "Control your home devices using a single app from anywhere in the world",
+                "Switch through different scenes and quick action for fast management of your home.",
                 style: AppTextStyles.style14opc.copyWith(
                   color: Colors.white.withOpacity(0.7),
                 ),

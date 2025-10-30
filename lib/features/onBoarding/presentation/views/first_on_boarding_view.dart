@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_home/core/utils/app_text_styles.dart';
-import 'package:smart_home/features/onBoarding/presentation/widgets/align_widget.dart';
+import 'package:smart_home/features/onBoarding/presentation/widgets/align_shadow_widget.dart';
 
 class FirstOnBoardingView extends StatelessWidget {
   const FirstOnBoardingView({super.key});
@@ -19,7 +19,7 @@ class FirstOnBoardingView extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        AlignWidget(hight: size.height * 0.5),
+        AlignShadowWidget(hight: size.height * 0.5),
         Padding(
           padding: EdgeInsets.only(bottom: 100.h, left: 20.w, right: 20.w),
           child: Column(
