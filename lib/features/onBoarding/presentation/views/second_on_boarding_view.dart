@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:smart_home/core/utils/app_colors.dart';
+import 'package:smart_home/core/utils/app_constants.dart';
 import 'package:smart_home/core/utils/app_text_styles.dart';
 import 'package:smart_home/features/onBoarding/presentation/widgets/align_shadow_widget.dart';
 
@@ -15,14 +17,14 @@ class SecondOnBoardingView extends StatelessWidget {
           height: size.height,
           width: size.width,
           child: Image.asset(
-            "assets/images_onboarding/Rectangle 40167 (1).png",
+            AppConstants.imageOneSecondOnBoarding,
             fit: BoxFit.cover,
           ),
         ),
         Padding(
           padding: EdgeInsets.only(top: 20.h, right: 0.w),
           child: Image(
-            image: AssetImage("assets/images_onboarding/Image (1).png"),
+            image: AssetImage(AppConstants.imageTwoSecondOnBoarding),
             width: 375.w,
             height: 390.h,
             fit: BoxFit.contain,
@@ -36,14 +38,14 @@ class SecondOnBoardingView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Stay informed",
-                style: AppTextStyles.style28.copyWith(color: Colors.white),
+                AppConstants.textOneSecondView,
+                style: AppTextStyles.style28.copyWith(color: AppColors.myWhite),
               ),
               SizedBox(height: 6.h),
               Text(
-                "Instant notification of you about any activity or alerts.",
-                style: AppTextStyles.style14opc.copyWith(
-                  color: Colors.white.withOpacity(0.7),
+                AppConstants.textTwoSecondView,
+                style: AppTextStyles.style14.copyWith(
+                  color: AppColors.myWhite.withOpacity(0.7),
                 ),
               ),
             ],

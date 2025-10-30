@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:smart_home/core/utils/app_colors.dart';
+import 'package:smart_home/core/utils/app_constants.dart';
 import 'package:smart_home/core/utils/app_text_styles.dart';
 import 'package:smart_home/features/onBoarding/presentation/widgets/align_shadow_widget.dart';
 
@@ -15,14 +17,14 @@ class ThirdOnBoardingView extends StatelessWidget {
           height: size.height,
           width: size.width,
           child: Image.asset(
-            "assets/images_onboarding/Rectangle 40168.png",
+            AppConstants.imageOneThirdOnBoarding,
             fit: BoxFit.cover,
           ),
         ),
         Padding(
           padding: EdgeInsets.only(top: 20.h, right: 0.w),
           child: Image(
-            image: AssetImage("assets/images_onboarding/Image (2).png"),
+            image: AssetImage(AppConstants.imageTwoThirdOnBoarding),
             width: 375.w,
             height: 390.h,
             fit: BoxFit.contain,
@@ -36,14 +38,14 @@ class ThirdOnBoardingView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Automate",
-                style: AppTextStyles.style28.copyWith(color: Colors.white),
+                AppConstants.textOneThirdView,
+                style: AppTextStyles.style28.copyWith(color: AppColors.myWhite),
               ),
               SizedBox(height: 6.h),
               Text(
-                "Switch through different scenes and quick action for fast management of your home.",
-                style: AppTextStyles.style14opc.copyWith(
-                  color: Colors.white.withOpacity(0.7),
+                AppConstants.textTwoThirdView,
+                style: AppTextStyles.style14.copyWith(
+                  color: AppColors.myWhite.withOpacity(0.7),
                 ),
               ),
             ],

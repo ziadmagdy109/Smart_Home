@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_home/core/routing/routes.dart';
 import 'package:smart_home/core/utils/app_colors.dart';
+import 'package:smart_home/core/utils/app_constants.dart';
 import 'package:smart_home/core/utils/app_text_styles.dart';
 import 'package:smart_home/features/onBoarding/presentation/views/first_on_boarding_view.dart';
 import 'package:smart_home/features/onBoarding/presentation/views/second_on_boarding_view.dart';
@@ -44,7 +45,10 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               onTap: () {
                 Navigator.pushReplacementNamed(context, Routes.homeSignInView);
               },
-              child: Text("Skip", style: AppTextStyles.style14),
+              child: Text(
+                AppConstants.kSkip,
+                style: AppTextStyles.style14.copyWith(color: AppColors.myWhite),
+              ),
             ),
           ),
           Padding(
