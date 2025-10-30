@@ -6,7 +6,6 @@ import 'package:smart_home/core/utils/app_text_styles.dart';
 import 'package:smart_home/features/onBoarding/presentation/views/first_on_boarding_view.dart';
 import 'package:smart_home/features/onBoarding/presentation/views/second_on_boarding_view.dart';
 import 'package:smart_home/features/onBoarding/presentation/views/third_on_boarding_view.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({super.key});
@@ -56,17 +55,43 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   //  Indicators
-                  SmoothPageIndicator(
-                    controller: _pageController,
-                    count: pages.length,
-                    effect: WormEffect(
-                      strokeWidth: 3,
-                      dotHeight: 8,
-                      dotWidth: 8,
-                      spacing: 5,
-                      activeDotColor: AppColors.myGreen,
-                      dotColor: AppColors.myWhite.withOpacity(0.3),
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(pages.length, (index) {
+                      final bool isActive = index == currentIndex;
+                      return AnimatedContainer(
+                        duration: const Duration(milliseconds: 300),
+                        margin: const EdgeInsets.symmetric(horizontal: 5),
+                        width: isActive ? 16 : 8,
+                        height: isActive ? 16 : 8,
+                        child: isActive
+                            ? Container(
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    color: AppColors.myGreen,
+                                    width: 0.5,
+                                  ),
+                                ),
+                                child: Center(
+                                  child: Container(
+                                    width: 8,
+                                    height: 8,
+                                    decoration: const BoxDecoration(
+                                      color: AppColors.myGreen,
+                                      shape: BoxShape.circle,
+                                    ),
+                                  ),
+                                ),
+                              )
+                            : Container(
+                                decoration: BoxDecoration(
+                                  color: AppColors.myWhite.withOpacity(0.4),
+                                  shape: BoxShape.circle,
+                                ),
+                              ),
+                      );
+                    }),
                   ),
                   Spacer(),
                   // The circle behind indicator
