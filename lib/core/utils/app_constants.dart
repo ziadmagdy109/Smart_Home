@@ -17,7 +17,7 @@ class AppConstants {
   static const String kSignIn = "Sign In";
   static const String kSignInWith = "Sign in with";
   static const String kDontHaveAnAccount = "Don't have an account?";
-  static const String kSignUp = "Sign Up";
+  static const String kSignUp = " Sign Up";
 
   // Asset
   static const String imageFirstOnBoarding =
