@@ -20,7 +20,6 @@ class _OnBoardingViewState extends State<OnBoardingView> {
   int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     List<Widget> pages = [
       FirstOnBoardingView(),
       SecondOnBoardingView(),
