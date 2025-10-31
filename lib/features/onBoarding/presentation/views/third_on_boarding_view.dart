@@ -39,12 +39,14 @@ class ThirdOnBoardingView extends StatelessWidget {
             children: [
               Text(
                 AppConstants.textOneThirdView,
-                style: AppTextStyles.style28.copyWith(color: AppColors.myWhite),
+                style: AppTextStyles.font28weight700.copyWith(
+                  color: AppColors.myWhite,
+                ),
               ),
               SizedBox(height: 6.h),
               Text(
                 AppConstants.textTwoThirdView,
-                style: AppTextStyles.style14.copyWith(
+                style: AppTextStyles.font14weight600.copyWith(
                   color: AppColors.myWhite.withOpacity(0.7),
                 ),
               ),

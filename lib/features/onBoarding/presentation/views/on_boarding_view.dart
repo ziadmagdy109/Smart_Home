@@ -47,7 +47,9 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               },
               child: Text(
                 AppConstants.kSkip,
-                style: AppTextStyles.style14.copyWith(color: AppColors.myWhite),
+                style: AppTextStyles.font14weight600.copyWith(
+                  color: AppColors.myWhite,
+                ),
               ),
             ),
           ),

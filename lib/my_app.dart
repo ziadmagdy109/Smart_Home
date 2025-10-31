@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_home/core/routing/app_router.dart';
 import 'package:smart_home/core/routing/routes.dart';
+import 'package:smart_home/core/utils/app_colors.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       ensureScreenSize: true,
       builder: (context, child) => MaterialApp(
+        theme: ThemeData(scaffoldBackgroundColor: AppColors.myWhite),
         debugShowCheckedModeBanner: false,
         initialRoute: Routes.onBoardingView,
         onGenerateRoute: AppRouter.generateRoute,
