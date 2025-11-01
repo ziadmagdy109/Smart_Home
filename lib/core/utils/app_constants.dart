@@ -23,6 +23,9 @@ class AppConstants {
   static const String kEmail = "Email";
   static const String kPassword = "Password";
   static const String kForgotPassword = "Forgot Password?";
+  static const String kResetPassword = "Reset Password";
+  static const String kEnterEmailToResetPassword =
+      "Enter your email and password to get into the app!";
 
   // Asset
   static const String imageFirstOnBoarding =
@@ -41,4 +44,6 @@ class AppConstants {
   static const String logoGoogle = "assets/images_sign_in/LogoGoogle.png";
   static const String logoTwitter = "assets/images_sign_in/LogoTwitter.png";
   static const String imageSignIn = "assets/images_sign_in/sign_in_picture.png";
+  static const String imageResetPassword =
+      "assets/images_sign_in/ResetPassword.png";
 }

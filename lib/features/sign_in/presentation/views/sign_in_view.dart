@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:smart_home/core/routing/routes.dart';
 import 'package:smart_home/core/utils/app_colors.dart';
 import 'package:smart_home/core/utils/app_constants.dart';
 import 'package:smart_home/core/utils/app_text_styles.dart';
@@ -50,10 +51,15 @@ class SignInView extends StatelessWidget {
               SizedBox(height: 15.h),
               TextFieldPassword(),
               SizedBox(height: 20.h),
-              Text(
-                AppConstants.kForgotPassword,
-                style: AppTextStyles.font12weight500.copyWith(
-                  color: AppColors.myColorForgotPassword,
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, Routes.resetPasswordView);
+                },
+                child: Text(
+                  AppConstants.kForgotPassword,
+                  style: AppTextStyles.font12weight500.copyWith(
+                    color: AppColors.myColorForgotPassword,
+                  ),
                 ),
               ),
               SizedBox(height: 30.h),
