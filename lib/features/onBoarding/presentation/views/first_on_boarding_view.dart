@@ -29,14 +29,14 @@ class FirstOnBoardingView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                AppConstants.textOneFirstView,
+                AppConstants.kTextOneFirstView,
                 style: AppTextStyles.font28weight700.copyWith(
                   color: AppColors.myWhite,
                 ),
               ),
               SizedBox(height: 6.h),
               Text(
-                AppConstants.textTwoFirstView,
+                AppConstants.kTextTwoFirstView,
                 style: AppTextStyles.font14weight600.copyWith(
                   color: AppColors.myWhite.withOpacity(0.7),
                 ),

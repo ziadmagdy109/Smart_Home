@@ -5,6 +5,15 @@ import 'package:smart_home/core/utils/app_colors.dart';
 class AppTextStyles {
   AppTextStyles._();
 
+  static TextStyle font12weight500 = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w500,
+  );
+  static TextStyle font14weight500 = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w500,
+  );
+
   static TextStyle font14weight600 = TextStyle(
     fontSize: 14.sp,
     fontWeight: FontWeight.w600,
@@ -23,9 +32,17 @@ class AppTextStyles {
     fontWeight: FontWeight.w600,
     color: AppColors.myWhite,
   );
+  static TextStyle font18wight600weight = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w600,
+  );
 
   static TextStyle font28weight700 = TextStyle(
     fontSize: 28.sp,
+    fontWeight: FontWeight.w700,
+  );
+  static TextStyle font20weight700 = TextStyle(
+    fontSize: 20.sp,
     fontWeight: FontWeight.w700,
   );
 

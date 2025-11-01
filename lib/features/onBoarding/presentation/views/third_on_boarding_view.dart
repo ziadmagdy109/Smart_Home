@@ -38,14 +38,14 @@ class ThirdOnBoardingView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                AppConstants.textOneThirdView,
+                AppConstants.kTextOneThirdView,
                 style: AppTextStyles.font28weight700.copyWith(
                   color: AppColors.myWhite,
                 ),
               ),
               SizedBox(height: 6.h),
               Text(
-                AppConstants.textTwoThirdView,
+                AppConstants.kTextTwoThirdView,
                 style: AppTextStyles.font14weight600.copyWith(
                   color: AppColors.myWhite.withOpacity(0.7),
                 ),

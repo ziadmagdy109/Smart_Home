@@ -1,14 +1,14 @@
 class AppConstants {
   // App Info
   static const String kSkip = "Skip";
-  static const String textOneFirstView = "Convenience";
-  static const String textTwoFirstView =
+  static const String kTextOneFirstView = "Convenience";
+  static const String kTextTwoFirstView =
       "Control your home devices using a single app from anywhere in the world";
-  static const String textOneSecondView = "Stay informed";
-  static const String textTwoSecondView =
+  static const String kTextOneSecondView = "Stay informed";
+  static const String kTextTwoSecondView =
       "Instant notification of you about any activity or alerts.";
-  static const String textOneThirdView = "Automate";
-  static const String textTwoThirdView =
+  static const String kTextOneThirdView = "Automate";
+  static const String kTextTwoThirdView =
       "Switch through different scenes and quick action for fast management of your home.";
   static const String kSmart = "Smart";
   static const String kHome = "Home";
@@ -18,6 +18,11 @@ class AppConstants {
   static const String kSignInWith = "Sign in with";
   static const String kDontHaveAnAccount = "Don't have an account?";
   static const String kSignUp = " Sign Up";
+  static const String kEnterEmailAndPassword =
+      "Enter your email and password to get into the app!";
+  static const String kEmail = "Email";
+  static const String kPassword = "Password";
+  static const String kForgotPassword = "Forgot Password?";
 
   // Asset
   static const String imageFirstOnBoarding =
@@ -35,4 +40,5 @@ class AppConstants {
   static const String logoFacebook = "assets/images_sign_in/LogoFacebook.png";
   static const String logoGoogle = "assets/images_sign_in/LogoGoogle.png";
   static const String logoTwitter = "assets/images_sign_in/LogoTwitter.png";
+  static const String imageSignIn = "assets/images_sign_in/sign_in_picture.png";
 }

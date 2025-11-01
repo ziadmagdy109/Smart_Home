@@ -38,14 +38,14 @@ class SecondOnBoardingView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                AppConstants.textOneSecondView,
+                AppConstants.kTextOneSecondView,
                 style: AppTextStyles.font28weight700.copyWith(
                   color: AppColors.myWhite,
                 ),
               ),
               SizedBox(height: 6.h),
               Text(
-                AppConstants.textTwoSecondView,
+                AppConstants.kTextTwoSecondView,
                 style: AppTextStyles.font14weight600.copyWith(
                   color: AppColors.myWhite.withOpacity(0.7),
                 ),

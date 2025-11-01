@@ -1,5 +1,7 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:smart_home/core/routing/app_router.dart';
 import 'package:smart_home/core/routing/routes.dart';
 import 'package:smart_home/core/utils/app_colors.dart';
@@ -15,7 +17,12 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       ensureScreenSize: true,
       builder: (context, child) => MaterialApp(
-        theme: ThemeData(scaffoldBackgroundColor: AppColors.myWhite),
+        useInheritedMediaQuery: true, // مهم عشان DevicePreview يشتغل
+        builder: DevicePreview.appBuilder, // هنا السحر 🔮
+        theme: ThemeData(
+          scaffoldBackgroundColor: AppColors.myWhite,
+          textTheme: GoogleFonts.poppinsTextTheme(),
+        ),
         debugShowCheckedModeBanner: false,
         initialRoute: Routes.onBoardingView,
         onGenerateRoute: AppRouter.generateRoute,
