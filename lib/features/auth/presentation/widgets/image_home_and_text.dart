@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_home/core/utils/app_constants.dart';
-import 'package:smart_home/features/sign_in/presentation/widgets/smart_home_text_widget.dart';
+import 'package:smart_home/features/auth/presentation/widgets/smart_home_text_widget.dart';
 
 class ImageHomeAndText extends StatelessWidget {
   const ImageHomeAndText({super.key});

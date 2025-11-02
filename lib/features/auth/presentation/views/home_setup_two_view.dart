@@ -4,7 +4,7 @@ import 'package:smart_home/core/utils/app_colors.dart';
 import 'package:smart_home/core/utils/app_constants.dart';
 import 'package:smart_home/core/utils/app_text_styles.dart';
 import 'package:smart_home/core/widgets/buttom_continue.dart';
-import 'package:smart_home/features/sign_in/presentation/widgets/filllo_or_create.dart';
+import 'package:smart_home/features/auth/presentation/widgets/filllo_or_create.dart';
 
 class HomeSetupTwoView extends StatefulWidget {
   const HomeSetupTwoView({super.key});
