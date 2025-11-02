@@ -22,22 +22,21 @@ dependencies:
   pinput: ^5.0.2
   shared_preferences: ^2.5.3
   smooth_page_indicator: ^1.1.0
-flutter_svg: ^2.2.1
 
 dev_dependencies:
   flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.14.4
   flutter_test:
     sdk: flutter
 
 flutter:
   uses-material-design: true
-  # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/
     - assets/images_onboarding/
     - assets/images_sign_in/
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/dark_glass_1024.png"
