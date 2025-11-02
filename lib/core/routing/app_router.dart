@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:smart_home/core/routing/routes.dart';
 import 'package:smart_home/features/onBoarding/presentation/views/on_boarding_view.dart';
+import 'package:smart_home/features/sign_in/presentation/views/home_setup_one_view.dart';
+import 'package:smart_home/features/sign_in/presentation/views/home_setup_two_view.dart';
 import 'package:smart_home/features/sign_in/presentation/views/reset_password_view.dart';
 import 'package:smart_home/features/sign_in/presentation/views/sign_in_view.dart';
 import 'package:smart_home/features/sign_in/presentation/views/smart_home_sign_in_view.dart';
@@ -19,6 +21,10 @@ class AppRouter {
         return MaterialPageRoute(builder: (context) => ResetPasswordView());
       case Routes.verifyCodeView:
         return MaterialPageRoute(builder: (context) => VerifyCodeView());
+      case Routes.homeSetupOneView:
+        return MaterialPageRoute(builder: (context) => HomeSetupOneView());
+      case Routes.homeSetupTwoView:
+        return MaterialPageRoute(builder: (context) => HomeSetupTwoView());
       default:
         Scaffold(body: Center(child: Text("not found page")));
     }

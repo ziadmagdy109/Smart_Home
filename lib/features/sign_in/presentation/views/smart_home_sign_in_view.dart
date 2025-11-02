@@ -13,42 +13,40 @@ class SmartHomeSignInView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              const ImageHomeAndText(),
-              GestureDetector(
-                onTap: () {
-                  Navigator.pushReplacementNamed(context, Routes.signInView);
-                },
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.w),
-                  child: const ButtomSignIn(),
-                ),
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const ImageHomeAndText(),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, Routes.signInView);
+              },
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                child: const ButtomSignIn(),
               ),
-              SizedBox(height: 42.h),
-              const TextAndDevider(),
-              SizedBox(height: 15.h),
-              SingleChildScrollView(
-                //تريكايه رايقه جدا
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ContainerSignIn(imageSocial: AppConstants.logoFacebook),
-                    SizedBox(width: 15.w),
-                    ContainerSignIn(imageSocial: AppConstants.logoGoogle),
-                    SizedBox(width: 15.w),
-                    ContainerSignIn(imageSocial: AppConstants.logoTwitter),
-                  ],
-                ),
+            ),
+            SizedBox(height: 42.h),
+            const TextAndDevider(),
+            SizedBox(height: 15.h),
+            SingleChildScrollView(
+              //تريكايه رايقه جدا
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const ContainerSignIn(imageSocial: AppConstants.logoFacebook),
+                  SizedBox(width: 15.w),
+                  const ContainerSignIn(imageSocial: AppConstants.logoGoogle),
+                  SizedBox(width: 15.w),
+                  const ContainerSignIn(imageSocial: AppConstants.logoTwitter),
+                ],
               ),
-              SizedBox(height: 15.h),
-              DontHaveAnAccountText(),
-            ],
-          ),
+            ),
+            SizedBox(height: 15.h),
+            const DontHaveAnAccountText(),
+          ],
         ),
       ),
     );

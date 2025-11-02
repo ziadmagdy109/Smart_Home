@@ -24,7 +24,9 @@ class SignInView extends StatelessWidget {
         scrolledUnderElevation: 0,
         centerTitle: true,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: Icon(Icons.chevron_left, size: 30.sp),
         ),
       ),

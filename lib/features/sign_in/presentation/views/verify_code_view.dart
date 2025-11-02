@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:smart_home/core/routing/routes.dart';
 import 'package:smart_home/core/utils/app_colors.dart';
 import 'package:smart_home/core/utils/app_constants.dart';
 import 'package:smart_home/core/utils/app_text_styles.dart';
@@ -47,7 +48,12 @@ class VerifyCodeView extends StatelessWidget {
               SizedBox(height: 55.h),
               PinPut(),
               SizedBox(height: 56.h),
-              ButtomSignIn(),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, Routes.homeSetupOneView);
+                },
+                child: ButtomSignIn(),
+              ),
               SizedBox(height: 10.h),
               CountResendCode(),
               SizedBox(height: 10.h),

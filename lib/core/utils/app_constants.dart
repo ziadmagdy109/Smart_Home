@@ -33,6 +33,16 @@ class AppConstants {
   static const String kDidntReceiveIt = "Didn't receive it?";
 
   static const String kResend = " Resend";
+  static const String kHomeSetup = "Home Setup";
+  static const String kTextOneHomeSetup =
+      "You've set up your account. Now set up your home.";
+  static const String kTextTwoHomeSetup =
+      "Adding a new home to your Google Nest Account is the first step in bringing your products together in one place.";
+  static const String kTextThreeHomeSetup =
+      "Looks like you have homes associated with Google. Choose one to use with Nest.";
+  static const String kContinue = "Continue";
+  static const String kFilloHouse = "Filllo House";
+  static const String kCreateNew = "Create New";
 
   // Asset
   static const String imageFirstOnBoarding =
@@ -53,4 +63,5 @@ class AppConstants {
   static const String imageSignIn = "assets/images_sign_in/sign_in_picture.png";
   static const String imageResetPassword =
       "assets/images_sign_in/ResetPassword.png";
+  static const String imageHomeSetup = "assets/images_sign_in/HomeSetup.png";
 }
