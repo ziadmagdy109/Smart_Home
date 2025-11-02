@@ -13,6 +13,7 @@ class SmartHomeSignInView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    precacheImage(const AssetImage(AppConstants.imageHomeAndText), context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(

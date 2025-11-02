@@ -41,7 +41,7 @@ class SignInView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ImageSignIn(),
+              const ImageSignIn(),
               SizedBox(height: 19.h),
               Text(AppConstants.kSignIn, style: AppTextStyles.font20weight700),
               Text(
