@@ -5,21 +5,25 @@ import 'package:smart_home/core/utils/app_constants.dart';
 import 'package:smart_home/core/utils/app_text_styles.dart';
 
 class ButtomSignIn extends StatelessWidget {
-  const ButtomSignIn({super.key});
+  const ButtomSignIn({super.key, this.onPressed});
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 54.h,
-      width: double.infinity.w,
-      decoration: BoxDecoration(
-        color: AppColors.myGreen,
-        borderRadius: BorderRadius.circular(15.r),
-      ),
-      child: Center(
-        child: Text(
-          AppConstants.kSignIn,
-          style: AppTextStyles.font16wight600weight,
+    return GestureDetector(
+      onTap: onPressed,
+      child: Container(
+        height: 54.h,
+        width: double.infinity.w,
+        decoration: BoxDecoration(
+          color: AppColors.myGreen,
+          borderRadius: BorderRadius.circular(15.r),
+        ),
+        child: Center(
+          child: Text(
+            AppConstants.kSignIn,
+            style: AppTextStyles.font16wight600weight,
+          ),
         ),
       ),
     );

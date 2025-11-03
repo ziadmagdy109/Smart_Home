@@ -6,6 +6,7 @@ import 'package:smart_home/features/auth/presentation/views/reset_password_view.
 import 'package:smart_home/features/auth/presentation/views/sign_in_view.dart';
 import 'package:smart_home/features/auth/presentation/views/smart_home_sign_in_view.dart';
 import 'package:smart_home/features/auth/presentation/views/verify_code_view.dart';
+import 'package:smart_home/features/home/presentation/views/home_view.dart';
 import 'package:smart_home/features/onBoarding/presentation/views/on_boarding_view.dart';
 
 class AppRouter {
@@ -25,6 +26,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (context) => HomeSetupOneView());
       case Routes.homeSetupTwoView:
         return MaterialPageRoute(builder: (context) => HomeSetupTwoView());
+      case Routes.homeView:
+        return MaterialPageRoute(builder: (context) => HomeView());
       default:
         Scaffold(body: Center(child: Text("not found page")));
     }

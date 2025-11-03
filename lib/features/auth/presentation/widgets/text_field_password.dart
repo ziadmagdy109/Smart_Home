@@ -21,7 +21,15 @@ class _TextFieldPasswordState extends State<TextFieldPassword> {
       children: [
         Text(AppConstants.kPassword, style: AppTextStyles.font14weight500),
         SizedBox(height: 10.h),
-        TextField(
+        TextFormField(
+          validator: (data) {
+            if (data == null || data.isEmpty) {
+              return 'Please enter your password';
+            } else if (data.length < 8) {
+              return 'Password must be at least 8 characters';
+            }
+            return null;
+          },
           obscureText: _obscureText,
           cursorColor: AppColors.myBlack,
           decoration: InputDecoration(
@@ -33,6 +41,20 @@ class _TextFieldPasswordState extends State<TextFieldPassword> {
               ),
             ),
             focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10.r),
+              borderSide: BorderSide(
+                color: AppColors.myColorTextField,
+                width: 0.5.w,
+              ),
+            ),
+            errorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10.r),
+              borderSide: BorderSide(
+                color: AppColors.myColorTextField,
+                width: 0.5.w,
+              ),
+            ),
+            focusedErrorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10.r),
               borderSide: BorderSide(
                 color: AppColors.myColorTextField,

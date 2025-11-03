@@ -37,11 +37,11 @@ class SmartHomeSignInView extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const ContainerSignIn(imageSocial: AppConstants.logoFacebook),
+                  ContainerSignIn(imageSocial: AppConstants.logoFacebook),
                   SizedBox(width: 15.w),
-                  const ContainerSignIn(imageSocial: AppConstants.logoGoogle),
+                  ContainerSignIn(imageSocial: AppConstants.logoGoogle),
                   SizedBox(width: 15.w),
-                  const ContainerSignIn(imageSocial: AppConstants.logoTwitter),
+                  ContainerSignIn(imageSocial: AppConstants.logoTwitter),
                 ],
               ),
             ),

@@ -10,7 +10,8 @@ import 'package:smart_home/features/auth/presentation/widgets/text_field_email.d
 import 'package:smart_home/features/auth/presentation/widgets/text_field_password.dart';
 
 class SignInView extends StatelessWidget {
-  const SignInView({super.key});
+  SignInView({super.key});
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -48,11 +49,18 @@ class SignInView extends StatelessWidget {
                 AppConstants.kEnterEmailAndPassword,
                 style: AppTextStyles.font12weight500,
               ),
-              SizedBox(height: 30.h),
-              const TextFieldEmail(),
-              SizedBox(height: 15.h),
-              TextFieldPassword(),
-              SizedBox(height: 20.h),
+              Form(
+                key: _formKey,
+                child: Column(
+                  children: [
+                    SizedBox(height: 30.h),
+                    TextFieldEmail(),
+                    SizedBox(height: 15.h),
+                    TextFieldPassword(),
+                    SizedBox(height: 20.h),
+                  ],
+                ),
+              ),
               GestureDetector(
                 onTap: () {
                   Navigator.pushNamed(context, Routes.resetPasswordView);
@@ -65,7 +73,13 @@ class SignInView extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 30.h),
-              const ButtomSignIn(),
+              ButtomSignIn(
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    Navigator.pushNamed(context, Routes.homeView);
+                  }
+                },
+              ),
             ],
           ),
         ),

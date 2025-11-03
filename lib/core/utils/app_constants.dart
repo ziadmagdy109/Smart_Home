@@ -57,9 +57,9 @@ class AppConstants {
       "assets/images_onboarding/Image (2).png";
   static const String imageHomeAndText =
       "assets/images_sign_in/Rectangle 40170.png";
-  static const String logoFacebook = "assets/images_sign_in/LogoFacebook.png";
-  static const String logoGoogle = "assets/images_sign_in/LogoGoogle.png";
-  static const String logoTwitter = "assets/images_sign_in/LogoTwitter.png";
+  static const String logoFacebook = "assets/images_sign_in/Logo.svg";
+  static const String logoGoogle = "assets/images_sign_in/Logo-1.svg";
+  static const String logoTwitter = "assets/images_sign_in/Logo-2.svg";
   static const String imageSignIn = "assets/images_sign_in/sign_in_picture.png";
   static const String imageResetPassword =
       "assets/images_sign_in/ResetPassword.png";

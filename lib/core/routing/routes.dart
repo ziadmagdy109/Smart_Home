@@ -6,4 +6,5 @@ class Routes {
   static const String verifyCodeView = "/verifyCodeView";
   static const String homeSetupOneView = "/homeSetupOneView";
   static const String homeSetupTwoView = "/homeSetupTwoView";
+  static const String homeView = "/homeView";
 }

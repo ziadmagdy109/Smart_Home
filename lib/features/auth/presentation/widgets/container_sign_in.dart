@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:smart_home/core/utils/app_colors.dart';
 
 class ContainerSignIn extends StatelessWidget {
@@ -15,7 +16,7 @@ class ContainerSignIn extends StatelessWidget {
         borderRadius: BorderRadius.circular(10.r),
       ),
       child: Center(
-        child: Image.asset(imageSocial, height: 22.h, width: 22.w),
+        child: SvgPicture.asset(imageSocial, height: 22.h, width: 22.w),
       ),
     );
   }
