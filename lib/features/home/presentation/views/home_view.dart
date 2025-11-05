@@ -1,10 +1,49 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:smart_home/core/utils/app_constants.dart';
+import 'package:smart_home/features/home/presentation/widgets/custom_app_bar_home.dart';
+import 'package:smart_home/features/home/presentation/widgets/custom_nav_bar.dart';
+import 'package:smart_home/features/home/presentation/widgets/device_card.dart';
+import 'package:smart_home/features/home/presentation/widgets/devices_section.dart';
+import 'package:smart_home/features/home/presentation/widgets/home_grid.dart';
+import 'package:smart_home/features/home/presentation/widgets/my_home_section.dart';
+import 'package:smart_home/features/home/presentation/widgets/user_info_home.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text("Hi,,,")));
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.only(
+            top: 40.h,
+            bottom: 30.h,
+            left: 20.w,
+            right: 20.w,
+          ),
+          child: Column(
+            children: [
+              CustomAppBarHome(),
+              SizedBox(height: 30.h),
+              UserInfoHome(),
+              SizedBox(height: 20.h),
+              MyHomeSection(),
+              SizedBox(height: 20.h),
+              HomeGrid(),
+              SizedBox(height: 20.h),
+              DevicesSection(),
+              SizedBox(height: 20.h),
+              DeviceCard(title: AppConstants.kAirCondition),
+              SizedBox(height: 20.h),
+              DeviceCard(title: AppConstants.kLampLight),
+              SizedBox(height: 20.h),
+              CustomNavBar(),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

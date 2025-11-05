@@ -5,6 +5,7 @@ import 'package:smart_home/core/utils/app_colors.dart';
 import 'package:smart_home/core/utils/app_constants.dart';
 import 'package:smart_home/core/utils/app_text_styles.dart';
 import 'package:smart_home/core/widgets/buttom_sign_in.dart';
+import 'package:smart_home/core/widgets/custom_app_bar.dart';
 import 'package:smart_home/features/auth/presentation/widgets/image_sign_in.dart';
 import 'package:smart_home/features/auth/presentation/widgets/text_field_email.dart';
 import 'package:smart_home/features/auth/presentation/widgets/text_field_password.dart';
@@ -16,21 +17,7 @@ class SignInView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColors.myWhite,
-        title: Text(
-          AppConstants.kSignIn,
-          style: AppTextStyles.font18wight600weight,
-        ),
-        scrolledUnderElevation: 0,
-        centerTitle: true,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.chevron_left, size: 30.sp),
-        ),
-      ),
+      appBar: const CustomAppBar(title: AppConstants.kSignIn),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.only(

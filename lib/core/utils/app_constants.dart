@@ -43,6 +43,16 @@ class AppConstants {
   static const String kContinue = "Continue";
   static const String kFilloHouse = "Filllo House";
   static const String kCreateNew = "Create New";
+  static const String kProfileName = "Hi, Amira";
+  static const String kProfileSubName = "Welcome back to your smart home";
+  static const String kMyHome = "My Home";
+  static const String kAddHome = "Add Home";
+  static const String kAddNewHome = "Add New";
+  static const String kDevices = "Devices";
+  static const String kSeeAll = "See All";
+  static const String kAirCondition = "Air Condition";
+  static const String kLampLight = "Lamp Light";
+  static const String kDeviceList = "Device List";
 
   // Asset
   static const String imageFirstOnBoarding =
@@ -57,11 +67,16 @@ class AppConstants {
       "assets/images_onboarding/Image (2).png";
   static const String imageHomeAndText =
       "assets/images_sign_in/Rectangle 40170.png";
-  static const String logoFacebook = "assets/images_sign_in/Logo.svg";
-  static const String logoGoogle = "assets/images_sign_in/Logo-1.svg";
-  static const String logoTwitter = "assets/images_sign_in/Logo-2.svg";
+  static const String logoFacebook = "assets/images_sign_in/Logo_Facebook.svg";
+  static const String logoGoogle = "assets/images_sign_in/Logo_Google.svg";
+  static const String logoTwitter = "assets/images_sign_in/Logo_Twitter.svg";
   static const String imageSignIn = "assets/images_sign_in/sign_in_picture.png";
   static const String imageResetPassword =
       "assets/images_sign_in/ResetPassword.png";
   static const String imageHomeSetup = "assets/images_sign_in/HomeSetup.png";
+  static const String imageHomeProfile = "assets/images_home/image_profile.png";
+  static const String imageHome1 = "assets/images_home/home1.png";
+  static const String imageHome2 = "assets/images_home/home2.png";
+  static const String imageHome3 = "assets/images_home/home3.png";
+  static const String imageHome4 = "assets/images_home/home4.png";
 }

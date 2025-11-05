@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_home/core/routing/routes.dart';
-import 'package:smart_home/core/utils/app_colors.dart';
 import 'package:smart_home/core/utils/app_constants.dart';
 import 'package:smart_home/core/utils/app_text_styles.dart';
 import 'package:smart_home/core/widgets/buttom_continue.dart';
+import 'package:smart_home/core/widgets/custom_app_bar.dart';
 
 class HomeSetupOneView extends StatelessWidget {
   const HomeSetupOneView({super.key});
@@ -12,23 +12,7 @@ class HomeSetupOneView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColors.myGreen,
-        title: Text(
-          AppConstants.kHomeSetup,
-          style: AppTextStyles.font18wight600weight.copyWith(
-            color: AppColors.myWhite,
-          ),
-        ),
-        scrolledUnderElevation: 0,
-        centerTitle: true,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.chevron_left, size: 30.sp, color: AppColors.myWhite),
-        ),
-      ),
+      appBar: CustomAppBar(title: AppConstants.kHomeSetup),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.only(top: 30.h, bottom: 50.h),
