@@ -53,6 +53,14 @@ class AppConstants {
   static const String kAirCondition = "Air Condition";
   static const String kLampLight = "Lamp Light";
   static const String kDeviceList = "Device List";
+  static const String kMasterBedRoom = "Master Bed Room";
+  static const String kIsOn = "4/8 is on";
+  static const String kAddNewRoom = "Add New Room";
+  static const String kAddDevice = "Add Device";
+  static const String kRoomName = "Room Name";
+  static const String kSelected = "selected";
+  static const String kCancel = "Cancel";
+  static const String kCongratulations = "Congratulations!";
 
   // Asset
   static const String imageFirstOnBoarding =
