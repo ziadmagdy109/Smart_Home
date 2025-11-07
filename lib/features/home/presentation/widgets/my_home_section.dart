@@ -20,7 +20,7 @@ class MyHomeSection extends StatelessWidget {
           },
           child: Container(
             decoration: BoxDecoration(
-              color: AppColors.MyGreyHome,
+              color: AppColors.myGreyHome,
               borderRadius: BorderRadius.circular(14.r),
             ),
             padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),

@@ -8,4 +8,5 @@ class Routes {
   static const String homeSetupTwoView = "/homeSetupTwoView";
   static const String homeView = "/homeView";
   static const String addNewRoomHomeView = "/AddNewRoomHomeView";
+  static const String notificationsView = "/notificationsView";
 }

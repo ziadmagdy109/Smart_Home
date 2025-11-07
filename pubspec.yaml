@@ -39,6 +39,7 @@ flutter:
     - assets/images_onboarding/
     - assets/images_sign_in/
     - assets/images_home/
+    - assets/images_notifications/
 
 flutter_launcher_icons:
   android: true

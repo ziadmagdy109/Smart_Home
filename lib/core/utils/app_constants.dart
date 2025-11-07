@@ -61,6 +61,11 @@ class AppConstants {
   static const String kSelected = "selected";
   static const String kCancel = "Cancel";
   static const String kCongratulations = "Congratulations!";
+  static const String kNotifications = "Notifications";
+  static const String kHighEnergyUseDetected = "High energy use detected";
+  static const String kDoorUnlocked = "Door unlocked";
+  static const String kSmokeDetectedInLivingRoom =
+      "Smoke detected in Living Room";
 
   // Asset
   static const String imageFirstOnBoarding =
@@ -87,4 +92,10 @@ class AppConstants {
   static const String imageHome2 = "assets/images_home/home2.png";
   static const String imageHome3 = "assets/images_home/home3.png";
   static const String imageHome4 = "assets/images_home/home4.png";
+  static const String imagePowerNotification =
+      "assets/images_notifications/power.svg";
+  static const String imageDoorNotification =
+      "assets/images_notifications/door.svg";
+  static const String imageFireNotification =
+      "assets/images_notifications/fire.svg";
 }
