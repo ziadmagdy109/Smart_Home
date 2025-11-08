@@ -67,6 +67,7 @@ class AppConstants {
   static const String kSmokeDetectedInLivingRoom =
       "Smoke detected in Living Room";
   static const String kProfile = "Profile";
+  static const String kSave = "Save";
 
   // Asset
   static const String imageFirstOnBoarding =

@@ -10,4 +10,5 @@ class Routes {
   static const String addNewRoomHomeView = "/AddNewRoomHomeView";
   static const String notificationsView = "/notificationsView";
   static const String mainScreen = "/mainScreen";
+  static const String profileEditView = "/profileEditView";
 }

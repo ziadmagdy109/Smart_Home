@@ -10,6 +10,7 @@ import 'package:smart_home/features/auth/presentation/views/verify_code_view.dar
 import 'package:smart_home/features/home/presentation/views/add_new_room_home_view.dart';
 import 'package:smart_home/features/home/presentation/views/home_view.dart';
 import 'package:smart_home/features/home/presentation/views/notifications_view.dart';
+import 'package:smart_home/features/home/presentation/views/profile_edit_view.dart';
 import 'package:smart_home/features/home/presentation/widgets/MainScreen.dart';
 import 'package:smart_home/features/onBoarding/presentation/views/on_boarding_view.dart';
 
@@ -40,6 +41,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (context) => NotificationsView());
       case Routes.mainScreen:
         return MaterialPageRoute(builder: (context) => MainScreen());
+      case Routes.profileEditView:
+        return MaterialPageRoute(builder: (context) => ProfileEditView());
       default:
         Scaffold(body: Center(child: Text("not found page")));
     }
