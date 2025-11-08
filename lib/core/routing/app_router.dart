@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:smart_home/core/routing/routes.dart';
 import 'package:smart_home/features/auth/presentation/views/home_setup_one_view.dart';
 import 'package:smart_home/features/auth/presentation/views/home_setup_two_view.dart';
@@ -9,6 +10,7 @@ import 'package:smart_home/features/auth/presentation/views/verify_code_view.dar
 import 'package:smart_home/features/home/presentation/views/add_new_room_home_view.dart';
 import 'package:smart_home/features/home/presentation/views/home_view.dart';
 import 'package:smart_home/features/home/presentation/views/notifications_view.dart';
+import 'package:smart_home/features/home/presentation/widgets/MainScreen.dart';
 import 'package:smart_home/features/onBoarding/presentation/views/on_boarding_view.dart';
 
 class AppRouter {
@@ -29,11 +31,15 @@ class AppRouter {
       case Routes.homeSetupTwoView:
         return MaterialPageRoute(builder: (context) => HomeSetupTwoView());
       case Routes.homeView:
-        return MaterialPageRoute(builder: (context) => HomeView());
+        return MaterialPageRoute(
+          builder: (context) => HomeView(controller: ZoomDrawerController()),
+        );
       case Routes.addNewRoomHomeView:
         return MaterialPageRoute(builder: (context) => AddNewRoomHomeView());
       case Routes.notificationsView:
         return MaterialPageRoute(builder: (context) => NotificationsView());
+      case Routes.mainScreen:
+        return MaterialPageRoute(builder: (context) => MainScreen());
       default:
         Scaffold(body: Center(child: Text("not found page")));
     }

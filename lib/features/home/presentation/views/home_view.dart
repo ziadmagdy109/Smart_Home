@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:smart_home/core/utils/app_constants.dart';
 import 'package:smart_home/features/home/presentation/widgets/custom_app_bar_home.dart';
 import 'package:smart_home/features/home/presentation/widgets/custom_nav_bar.dart';
@@ -10,11 +11,13 @@ import 'package:smart_home/features/home/presentation/widgets/my_home_section.da
 import 'package:smart_home/features/home/presentation/widgets/user_info_home.dart';
 
 class HomeView extends StatelessWidget {
-  const HomeView({super.key});
-
+  final ZoomDrawerController controller;
+  HomeView({super.key, required this.controller});
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldKey,
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.only(
@@ -25,7 +28,7 @@ class HomeView extends StatelessWidget {
           ),
           child: Column(
             children: [
-              CustomAppBarHome(),
+              CustomAppBarHome(controller: controller),
               SizedBox(height: 30.h),
               UserInfoHome(),
               SizedBox(height: 20.h),

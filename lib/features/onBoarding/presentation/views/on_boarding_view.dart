@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:smart_home/core/routing/routes.dart';
 import 'package:smart_home/core/utils/app_colors.dart';
 import 'package:smart_home/core/utils/app_constants.dart';
 import 'package:smart_home/core/utils/app_text_styles.dart';
+import 'package:smart_home/features/auth/presentation/views/smart_home_sign_in_view.dart';
 import 'package:smart_home/features/onBoarding/presentation/views/first_on_boarding_view.dart';
 import 'package:smart_home/features/onBoarding/presentation/views/second_on_boarding_view.dart';
 import 'package:smart_home/features/onBoarding/presentation/views/third_on_boarding_view.dart';
@@ -42,7 +42,10 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             right: 21.w,
             child: GestureDetector(
               onTap: () {
-                Navigator.pushReplacementNamed(context, Routes.homeSignInView);
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (_) => SmartHomeSignInView()),
+                );
               },
               child: Text(
                 AppConstants.kSkip,
@@ -111,9 +114,11 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                             curve: Curves.easeInOut,
                           );
                         } else {
-                          Navigator.pushReplacementNamed(
+                          Navigator.pushReplacement(
                             context,
-                            Routes.homeSignInView,
+                            MaterialPageRoute(
+                              builder: (_) => SmartHomeSignInView(),
+                            ),
                           );
                         }
                       },

@@ -63,7 +63,7 @@ class SignInView extends StatelessWidget {
               ButtomSignIn(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    Navigator.pushNamed(context, Routes.homeView);
+                    Navigator.pushNamed(context, Routes.mainScreen);
                   }
                 },
               ),
