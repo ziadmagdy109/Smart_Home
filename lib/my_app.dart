@@ -17,9 +17,9 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       ensureScreenSize: true,
       builder: (context, child) => MaterialApp(
-        useInheritedMediaQuery: true, // علشان device_preview يشتغل صح
-        builder: DevicePreview.appBuilder, // مهم جدًا
-        locale: DevicePreview.locale(context),
+        useInheritedMediaQuery: true, // ✅ ضروري مع DevicePreview
+        locale: DevicePreview.locale(context), // ✅ علشان اللغة
+        builder: DevicePreview.appBuilder, // ✅ علشان الواجهة تتغير حسب الجهاز
         theme: ThemeData(
           scaffoldBackgroundColor: AppColors.myWhite,
           textTheme: GoogleFonts.poppinsTextTheme(),

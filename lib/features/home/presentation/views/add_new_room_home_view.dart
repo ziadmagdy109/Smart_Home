@@ -25,21 +25,19 @@ class AddNewRoomHomeView extends StatelessWidget {
           children: [
             BlocBuilderCategories(),
             Expanded(
-              child: SingleChildScrollView(
-                child: BlocBuilder<RoomTabsCubit, int>(
-                  builder: (context, selectedIndex) {
-                    switch (selectedIndex) {
-                      case 0:
-                        return const BedRoomBody();
-                      case 1:
-                        return const KitchenBody();
-                      case 2:
-                        return const LivingRoomBody();
-                      default:
-                        return const BedRoomBody();
-                    }
-                  },
-                ),
+              child: BlocBuilder<RoomTabsCubit, int>(
+                builder: (context, selectedIndex) {
+                  switch (selectedIndex) {
+                    case 0:
+                      return BedRoomBody();
+                    case 1:
+                      return KitchenBody();
+                    case 2:
+                      return LivingRoomBody();
+                    default:
+                      return BedRoomBody();
+                  }
+                },
               ),
             ),
             Padding(
