@@ -1,16 +1,28 @@
-# smart_home
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+lib/
+ ├── core/
+ │    ├── di/               → Dependency Injection setup
+ │    ├── helpers/          → Extensions & helper functions
+ │    ├── networking/       → API client, endpoints, interceptors
+ │    ├── routing/          → Centralized navigation logic
+ │    ├── theme/            → App theme, typography, colors
+ │    ├── utils/            → Shared constants, assets, utilities
+ │    └── widgets/          → Reusable UI components
+ │
+ ├── features/
+ │    ├── auth/
+ │    │     ├── data/          → Data sources, DTOs, repositories implementation
+ │    │     ├── domain/        → Entities, use cases, abstract repositories
+ │    │     └── presentation/  → UI (screens & widgets) + state management
+ │    │
+ │    ├── home/
+ │    │     ├── data/
+ │    │     ├── domain/
+ │    │     └── presentation/
+ │    │
+ │    └── onBoarding/
+ │          ├── data/ (optional)
+ │          ├── domain/ (optional)
+ │          └── presentation/  → Views & Cubit for onboarding
+ │
+ ├── main.dart               → App entry point
+ └── my_app.dart             → App setup (MaterialApp, routes, providers)
