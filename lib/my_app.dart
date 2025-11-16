@@ -1,4 +1,3 @@
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,9 +16,6 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       ensureScreenSize: true,
       builder: (context, child) => MaterialApp(
-        useInheritedMediaQuery: true, // ✅ ضروري مع DevicePreview
-        locale: DevicePreview.locale(context), // ✅ علشان اللغة
-        builder: DevicePreview.appBuilder, // ✅ علشان الواجهة تتغير حسب الجهاز
         theme: ThemeData(
           scaffoldBackgroundColor: AppColors.myWhite,
           textTheme: GoogleFonts.poppinsTextTheme(),
