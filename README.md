@@ -1,14 +1,4 @@
-# project_name
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-## Usage
-
-To run the app, use:
-
-```bash
-flutter run
+# Smart Home
+![Uploading Screenshot_1771836744.png…]()
+![Uploading Screenshot_1771836747.png…]()
+![Uploading Screenshot_1771836753.png…]()
