@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:smart_home/core/widgets/custom_app_bar.dart';
+import 'package:smart_home/core/components/custom_app_bar.dart';
 import 'package:smart_home/features/home/presentation/widgets/button_row_profile_edit.dart';
 import 'package:smart_home/features/home/presentation/widgets/custom_text_field_profile_edit.dart';
 import 'package:smart_home/features/home/presentation/widgets/profile_header_edit.dart';

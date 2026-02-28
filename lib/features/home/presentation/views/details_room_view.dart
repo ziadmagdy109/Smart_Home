@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smart_home/core/utils/app_colors.dart';
 import 'package:smart_home/core/utils/app_constants.dart';
 import 'package:smart_home/core/utils/app_text_styles.dart';
-import 'package:smart_home/core/widgets/custom_app_bar.dart';
+import 'package:smart_home/core/components/custom_app_bar.dart';
 
 class DetailsRoomView extends StatelessWidget {
   final String image;

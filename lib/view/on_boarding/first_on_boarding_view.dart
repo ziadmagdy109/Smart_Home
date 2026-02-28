@@ -1,0 +1,50 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:smart_home/core/utils/app_colors.dart';
+import 'package:smart_home/core/utils/app_constants.dart';
+import 'package:smart_home/core/utils/app_text_styles.dart';
+import 'package:smart_home/view/on_boarding/widgets/align_shadow_widget.dart';
+
+class FirstOnBoardingView extends StatelessWidget {
+  const FirstOnBoardingView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        SizedBox(
+          height: Get.height,
+          width: Get.width,
+          child: Image.asset(
+            AppConstants.imageFirstOnBoarding,
+            fit: BoxFit.cover,
+          ),
+        ),
+        AlignShadowWidget(hight: Get.height * 0.5),
+        Padding(
+          padding: EdgeInsets.only(bottom: 130.h, left: 20.w, right: 20.w),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                AppConstants.kTextOneFirstView,
+                style: AppTextStyles.font28weight700.copyWith(
+                  color: AppColors.myWhite,
+                ),
+              ),
+              SizedBox(height: 10.h),
+              Text(
+                AppConstants.kTextTwoFirstView,
+                style: AppTextStyles.font14weight500.copyWith(
+                  color: AppColors.myWhite.withOpacity(0.6),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}

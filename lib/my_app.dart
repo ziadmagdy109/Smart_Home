@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:get/get.dart';
 import 'package:smart_home/core/routing/app_router.dart';
 import 'package:smart_home/core/routing/routes.dart';
 import 'package:smart_home/core/utils/app_colors.dart';
+import 'package:smart_home/view/on_boarding/on_boarding_view.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -11,17 +12,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(360, 690),
+      designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
       ensureScreenSize: true,
-      builder: (context, child) => MaterialApp(
+      builder: (context, child) => GetMaterialApp(
         theme: ThemeData(
           scaffoldBackgroundColor: AppColors.myWhite,
-          textTheme: GoogleFonts.poppinsTextTheme(),
+          fontFamily: 'Poppins',
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.onBoardingView,
+        home: OnBoardingView(),
         onGenerateRoute: AppRouter.generateRoute,
       ),
     );

@@ -1,36 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:smart_home/core/routing/routes.dart';
-import 'package:smart_home/features/auth/presentation/views/home_setup_one_view.dart';
-import 'package:smart_home/features/auth/presentation/views/home_setup_two_view.dart';
-import 'package:smart_home/features/auth/presentation/views/reset_password_view.dart';
-import 'package:smart_home/features/auth/presentation/views/sign_in_view.dart';
-import 'package:smart_home/features/auth/presentation/views/smart_home_sign_in_view.dart';
-import 'package:smart_home/features/auth/presentation/views/verify_code_view.dart';
 import 'package:smart_home/features/home/presentation/views/add_new_room_home_view.dart';
 import 'package:smart_home/features/home/presentation/views/home_view.dart';
 import 'package:smart_home/features/home/presentation/views/notifications_view.dart';
 import 'package:smart_home/features/home/presentation/views/profile_edit_view.dart';
 import 'package:smart_home/features/home/presentation/widgets/MainScreen.dart';
-import 'package:smart_home/features/onBoarding/presentation/views/on_boarding_view.dart';
 
 class AppRouter {
   static Route? generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case Routes.onBoardingView:
-        return MaterialPageRoute(builder: (context) => OnBoardingView());
-      case Routes.homeSignInView:
-        return MaterialPageRoute(builder: (context) => SmartHomeSignInView());
-      case Routes.signInView:
-        return MaterialPageRoute(builder: (context) => SignInView());
-      case Routes.resetPasswordView:
-        return MaterialPageRoute(builder: (context) => ResetPasswordView());
-      case Routes.verifyCodeView:
-        return MaterialPageRoute(builder: (context) => VerifyCodeView());
-      case Routes.homeSetupOneView:
-        return MaterialPageRoute(builder: (context) => HomeSetupOneView());
-      case Routes.homeSetupTwoView:
-        return MaterialPageRoute(builder: (context) => HomeSetupTwoView());
+
       case Routes.homeView:
         return MaterialPageRoute(
           builder: (context) => HomeView(controller: ZoomDrawerController()),

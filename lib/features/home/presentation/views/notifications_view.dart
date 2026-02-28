@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_home/core/utils/app_colors.dart';
 import 'package:smart_home/core/utils/app_constants.dart';
-import 'package:smart_home/core/widgets/custom_app_bar.dart';
+import 'package:smart_home/core/components/custom_app_bar.dart';
 import 'package:smart_home/features/home/presentation/widgets/list_tile_notifications.dart';
 
 class NotificationsView extends StatelessWidget {

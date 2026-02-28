@@ -1,6 +1,6 @@
 class AppConstants {
   // App Info
-  static const String kSkip = "Skip";
+  static const String kSkip = "SKIP";
   static const String kTextOneFirstView = "Convenience";
   static const String kTextTwoFirstView =
       "Control your home devices using a single app from anywhere in the world";
@@ -71,7 +71,7 @@ class AppConstants {
 
   // Asset
   static const String imageFirstOnBoarding =
-      "assets/images_onboarding/Rectangle 40167.png";
+      "assets/images_onboarding/first_on_boarding.png";
   static const String imageOneSecondOnBoarding =
       "assets/images_onboarding/Rectangle 40167 (1).png";
   static const String imageTwoSecondOnBoarding =

@@ -1,0 +1,60 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:smart_home/core/components/custom_button.dart';
+import 'package:smart_home/core/utils/app_colors.dart';
+import 'package:smart_home/core/utils/app_constants.dart';
+import 'package:smart_home/core/utils/app_text_styles.dart';
+import 'package:smart_home/core/components/custom_app_bar.dart';
+import 'package:smart_home/view/auth/home_setup_two_view.dart';
+
+class HomeSetupOneView extends StatelessWidget {
+  const HomeSetupOneView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: CustomAppBar(title: AppConstants.kHomeSetup),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.only(top: 30.h, bottom: 50.h),
+          child: Column(
+            children: [
+              Image.asset(AppConstants.imageHomeSetup, fit: BoxFit.cover),
+              SizedBox(height: 30.h),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 46.w),
+                child: Column(
+                  children: [
+                    Text(
+                      AppConstants.kTextOneHomeSetup,
+                      style: AppTextStyles.font14weight500.copyWith(
+                        color: AppColors.c111
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(height: 10.h),
+                    Text(
+                      AppConstants.kTextTwoHomeSetup,
+                      style: AppTextStyles.font12weight400.copyWith(
+                        color: AppColors.c111.withOpacity(0.6)
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 270.h),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                child: CustomButton(title: AppConstants.kContinue,onPressed: () {
+                  Get.to(()=> HomeSetupTwoView());
+                },),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

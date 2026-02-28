@@ -1,0 +1,30 @@
+import 'package:flutter/material.dart';
+
+class AlignShadowWidget extends StatelessWidget {
+  const AlignShadowWidget({super.key, required this.hight});
+  final double hight;
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.bottomCenter,
+      child: Container(
+        height: hight,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Colors.transparent,
+
+              Colors.black54,
+              Colors.black87,
+              Colors.black87,
+
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
