@@ -6,7 +6,7 @@ import 'package:smart_home/core/utils/app_colors.dart';
 import 'package:smart_home/core/utils/app_constants.dart';
 import 'package:smart_home/core/utils/app_text_styles.dart';
 import 'package:smart_home/core/components/custom_app_bar.dart';
-import 'package:smart_home/features/home/presentation/widgets/MainScreen.dart';
+import 'package:smart_home/view/main_view/main_view.dart';
 
 import 'widgets/filllo_or_create.dart';
 
@@ -44,7 +44,7 @@ class _HomeSetupTwoViewState extends State<HomeSetupTwoView> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
                 child: CustomButton(title: AppConstants.kContinue,onPressed: () {
-                  Get.offAll(()=>MainScreen());
+                  Get.offAll(()=>MainView());
                 },),
               ),
             ],
