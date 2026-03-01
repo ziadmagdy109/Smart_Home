@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:smart_home/core/utils/app_colors.dart';
 import 'package:smart_home/core/utils/app_constants.dart';
 import 'package:smart_home/core/utils/app_text_styles.dart';
+import 'package:smart_home/view/notifications/notifications_view.dart';
 import 'package:smart_home/view/profile/edit_profile_view.dart';
 import 'package:smart_home/view_model/main_view_view_model.dart';
 
@@ -106,7 +107,9 @@ class SlideMenuView extends StatelessWidget {
                 icon: "assets/images_menu/Bell, Notification.svg",
                 title: "Notifications",
                 color: AppColors.c005,
-                onTap: () {},
+                onTap: () {
+                  Get.to(()=>const NotificationsView());
+                },
               ),
               _drawerItem(
                 icon: "assets/images_menu/Chat, Messages, Bubble, Circle.svg",
