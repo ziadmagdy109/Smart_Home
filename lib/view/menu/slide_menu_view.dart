@@ -5,6 +5,8 @@ import 'package:get/get.dart';
 import 'package:smart_home/core/utils/app_colors.dart';
 import 'package:smart_home/core/utils/app_constants.dart';
 import 'package:smart_home/core/utils/app_text_styles.dart';
+import 'package:smart_home/services/api_crud_services.dart';
+import 'package:smart_home/view/auth/smart_home_sign_in_view.dart';
 import 'package:smart_home/view/notifications/notifications_view.dart';
 import 'package:smart_home/view/profile/edit_profile_view.dart';
 import 'package:smart_home/view_model/main_view_view_model.dart';
@@ -121,7 +123,11 @@ class SlideMenuView extends StatelessWidget {
                 icon: "assets/images_menu/arrow-left-start-on-rectangle.svg",
                 title: "Log out",
                 color: AppColors.c005,
-                onTap: () {},
+                onTap: () {
+                  Get.offAll(()=> SmartHomeSignInView());
+                  Get.find<MainViewViewModel>().drawerController.toggle!();
+                  Get.find<APICrudServices>().tokenManager.logout();
+                },
               ),
               _drawerItem(
                 icon: "assets/images_menu/trash-twoline.svg",

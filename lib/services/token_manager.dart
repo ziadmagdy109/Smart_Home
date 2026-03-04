@@ -122,6 +122,7 @@ class TokenManager extends GetxController{
      role= null;
      fullName= null;
      photo= null;
+
     update();
   }
 

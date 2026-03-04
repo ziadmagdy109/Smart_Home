@@ -25,6 +25,8 @@ dependencies:
   get: ^4.7.3
   flutter_secure_storage: ^10.0.0
   fluttertoast: ^9.0.0
+  dio: ^5.9.2
+  tuya_home_sdk_flutter: ^0.2.3
 
 
 dev_dependencies:

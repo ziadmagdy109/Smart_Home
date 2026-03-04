@@ -1,43 +1,65 @@
-String? emptyFieldValidator(String? val) {
-  if (val == null || val.isEmpty) {
-    return 'لا يمكن أن يكون الحقل فارغاً';
-  } else {
-    return null;
+String? requiredValidator(String? value) {
+  if (value == null || value.trim().isEmpty) {
+    return 'This field cannot be empty';
   }
+  return null;
 }
 
-String? emailFieldValidator(String? val) {
-  if (val == null || val.isEmpty) {
-    return 'لا يمكن أن يكون الحقل فارغاً';
-  } else if (!val.contains('@')) {
-    return 'يرجى إدخال البريد الإلكتروني بشكل صحيح';
-  } else {
-    return null;
+String? emailValidator(String? value) {
+  if (value == null || value.trim().isEmpty) {
+    return 'Email is required';
   }
+
+  final emailRegex = RegExp(
+    r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$',
+  );
+
+  if (!emailRegex.hasMatch(value.trim())) {
+    return 'Please enter a valid email address';
+  }
+
+  return null;
 }
 
-String? phoneValidator(String? val) {
-  if (val == null || val.isEmpty) {
-    return 'لا يمكن أن يكون الحقل فارغاً';
-  } else if (!val.toString().startsWith('0')) {
-    return 'رقم الهاتف يجب أن يبدأ بصفر';
-  } else if (val.toString().length != 11 || !isNumeric(val)) {
-    return 'يرجى إدخال رقم الهاتف بشكل صحيح';
-  } else {
-    return null;
+String? phoneValidator(String? value) {
+  if (value == null || value.trim().isEmpty) {
+    return 'Phone number is required';
   }
+
+  final phone = value.trim();
+
+  // Egyptian phone format: 01XXXXXXXXX (11 digits)
+  final phoneRegex = RegExp(r'^01[0-2,5]{1}[0-9]{8}$');
+
+  if (!phoneRegex.hasMatch(phone)) {
+    return 'Please enter a valid 11-digit Egyptian phone number';
+  }
+
+  return null;
 }
 
-String? passwordValidator(String? val) {
-  if (val == null || val.isEmpty) {
-    return 'لا يمكن أن يكون الحقل فارغاً';
-  } else if (val.toString().length < 8) {
-    return 'كلمة المرور يجب أن تكون 6 أحرف على الأقل';
-  } else {
-    return null;
+String? passwordValidator(String? value) {
+  if (value == null || value.trim().isEmpty) {
+    return 'Password is required';
   }
-}
 
-bool isNumeric(String value) {
-  return int.tryParse(value) != null;
+  final password = value.trim();
+
+  if (password.length < 8) {
+    return 'Password must be at least 8 characters long';
+  }
+
+  if (!RegExp(r'[A-Z]').hasMatch(password)) {
+    return 'Password must contain at least one uppercase letter';
+  }
+
+  if (!RegExp(r'[a-z]').hasMatch(password)) {
+    return 'Password must contain at least one lowercase letter';
+  }
+
+  if (!RegExp(r'[0-9]').hasMatch(password)) {
+    return 'Password must contain at least one number';
+  }
+
+  return null;
 }
