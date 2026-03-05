@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:get/get.dart';
 
 void showSnackBar({required String message, required bool isError, String? title}) {
   Fluttertoast.showToast(
@@ -12,21 +11,6 @@ void showSnackBar({required String message, required bool isError, String? title
     fontSize: 16,
     backgroundColor: isError ? Colors.red.shade700 : Colors.green,
   );
- /* Get.snackbar(
-    isDismissible: false,
-    isError ? title ?? 'فشلت العملية' : "نجحت العملية",
-    message,
-    backgroundColor: isError ? Colors.red : Colors.green,
-    colorText: Colors.white,
-    messageText: Text(
-      message,
-      style: TextStyle(
-        fontWeight: FontWeight.w600,
-        fontSize: 12,
-        color: Colors.white,
-      ),
-    ),
-  );*/
 }
 
 String formatLineType(String status){

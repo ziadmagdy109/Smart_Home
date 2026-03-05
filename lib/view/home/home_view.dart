@@ -9,6 +9,7 @@ import 'package:smart_home/view/home/widgets/list_devices_header.dart';
 import 'package:smart_home/view/home/widgets/list_home_grid.dart';
 import 'package:smart_home/view/home/widgets/list_home_header.dart';
 import 'package:smart_home/view/home/widgets/user_info_home.dart';
+import 'package:tuya_home_sdk_flutter/tuya_home_sdk_flutter.dart';
 
 class HomeView extends StatefulWidget {
   HomeView({super.key,});
@@ -19,10 +20,114 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  bool isOpened = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(onPressed: ()async{
+      /*  await TuyaHomeSdkFlutter.instance.sendVerifyCodeWithUserName(
+          countryCode: '20',
+          username: 'karimsayffcih@gmail.com',
+          type: 1,
+        );
+*/
+       /* final bool success = await TuyaHomeSdkFlutter.instance.registerByUserName(
+            username: 'karimsayffcih@gmail.com',
+            countryCode: '+1',
+            code: '966084',
+            password: '123456Aa!'
+        );
+
+        if (success) {
+          print('User registered successfully');
+        } else {
+          print('User registration failed');
+        }*/
+       /* await TuyaHomeSdkFlutter.instance.loginWithUserName(
+          countryCode: '20', // مثال لمصر
+          username: 'karimsayffcih@gmail.com',
+          password: '123456Aa!',
+        ).then((value) {
+          print(value);
+        },);*/
+
+       /*final home = await TuyaHomeSdkFlutter.instance.addHomeWithName(
+          name: 'My Home',
+          latitude: 29.84416584781145,
+          longitude: 31.33953823504614, geoName: 'home-helwan',
+        );*/
+
+       /*await TuyaHomeSdkFlutter.instance.getHomeList().then((value) {
+         print(value);
+       },);*/
+
+       /* final home = await TuyaHomeSdkFlutter.instance.getHomeList();
+
+        final res = await home[0].addRoom(
+          roomName: 'My Office Room',
+        );
+
+        if (res != null) {
+          print('Room added successfully');
+        }*/
+
+      /*  final home = await TuyaHomeSdkFlutter.instance.getHomeList();
+
+        await TuyaHomeSdkFlutter.instance.startConfigBLEWifiDevice(
+          ssid: 'TP-Dabaa',
+          password: '1810211KE',
+          homeId: home[0].homeId,
+          deviceUuid: '',
+          deviceProductId: '',
+        ).then((value) {
+         print(value.toString());
+        },);*/
+
+/*
+       TuyaHomeSdkFlutter.instance.discoverDevices().listen(
+              (device) {
+            debugPrint("Discovered Device: ${device.name}");
+            print('Starting device');
+            print(device.toString());
+            print(device.uuid);
+           print( device.uiId);
+           print(device.productId);
+
+          },
+          onError: (error) {
+            debugPrint("Error discovering devices: $error");
+          },
+        );*/
+      /* final home = await TuyaHomeSdkFlutter.instance.getHomeList();
+
+        await TuyaHomeSdkFlutter.instance.startConfigBLEWifiDevice(
+          ssid: 'TP-Dabaa',
+          password: '1810211KE',
+          homeId: home[0].homeId,
+          deviceUuid: '3ae78dabf62cb9b6',
+          deviceProductId: 'keyjnuy4s3kre7m7',
+        ).then((value) {
+          print(value.toString());
+        },);*/
+       /* final home = await TuyaHomeSdkFlutter.instance.getHomeList();
+        await TuyaHomeSdkFlutter.instance.getHomeDevices(homeId: home[0].homeId).then((value) {
+
+
+
+        },);*/
+
+        if(isOpened){
+
+          TuyaHomeSdkFlutter.instance.publishDps(deviceId: 'bfbc4cbf71b2f7eda8rnrb', dps: {'1': false});
+          isOpened = false;
+        }else{
+          TuyaHomeSdkFlutter.instance.publishDps(deviceId: 'bfbc4cbf71b2f7eda8rnrb', dps: {'1': true});
+          isOpened = true;
+
+        }
+
+      }),
       key: scaffoldKey,
       body: SingleChildScrollView(
         child: Padding(
