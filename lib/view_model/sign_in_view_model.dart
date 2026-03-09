@@ -7,6 +7,7 @@ import 'package:smart_home/view/main_view/main_view.dart';
 import 'package:smart_home/view/on_boarding/first_on_boarding_view.dart';
 import 'package:smart_home/view/on_boarding/second_on_boarding_view.dart';
 import 'package:smart_home/view/on_boarding/third_on_boarding_view.dart';
+import 'package:tuya_home_sdk_flutter/tuya_home_sdk_flutter.dart';
 
 class SignInViewModel extends APICrudServices{
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
@@ -15,7 +16,7 @@ class SignInViewModel extends APICrudServices{
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  submit()async{
+  /*submit()async{
     if (formKey.currentState!.validate()) {
       showLoadingIndicator();
       await post(endPoint: 'auth/login', body: {
@@ -25,11 +26,30 @@ class SignInViewModel extends APICrudServices{
       },sendToken: false).then((value) {
         dismissLoadingIndicator();
         Get.offAll(()=>MainView());
-       /* if(value.data['status'] == 'true'){
+       *//* if(value.data['status'] == 'true'){
           Get.offAll(()=>MainView());
         }else{
           showSnackBar(message: value.data['message'] ?? 'Error occurred while creating account, Please try again later' , isError: false);
-        }*/
+        }*//*
+      },);
+
+    }
+  }*/
+
+  submit()async{
+    if (formKey.currentState!.validate()) {
+      showLoadingIndicator();
+      await TuyaHomeSdkFlutter.instance.loginWithUserName(
+          countryCode: '+20',
+          username: emailController.text.trim(),
+          password: passwordController.text.trim(),
+      ).then((value) {
+        dismissLoadingIndicator();
+        if(value){
+          Get.offAll(()=>MainView());
+        }else{
+          showSnackBar(message:'Wrong email or password' , isError: true);
+        }
       },);
 
     }

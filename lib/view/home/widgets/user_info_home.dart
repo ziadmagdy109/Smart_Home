@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:smart_home/core/utils/app_colors.dart';
 import 'package:smart_home/core/utils/app_constants.dart';
 import 'package:smart_home/core/utils/app_text_styles.dart';
+import 'package:smart_home/view_model/user_view_model.dart';
 
-class UserInfoHome extends StatelessWidget {
+class UserInfoHome extends StatefulWidget {
   const UserInfoHome({super.key});
 
+  @override
+  State<UserInfoHome> createState() => _UserInfoHomeState();
+}
+
+class _UserInfoHomeState extends State<UserInfoHome> {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -22,9 +29,10 @@ class UserInfoHome extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                AppConstants.kProfileName,
-                style: AppTextStyles.font24weight600.copyWith(
+                'HI, ${Get.find<UserViewModel>().user?.username}',
+                style: AppTextStyles.font14weight600.copyWith(
                   color: AppColors.myBlack,
+
                 ),
               ),
               Text(

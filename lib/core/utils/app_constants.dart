@@ -29,7 +29,7 @@ class AppConstants {
   static const String kEnterTheVerificationCode = "Enter the verification code";
   static const String kVerifySendToEmail =
       "The verification code has been sent to your email.";
-  static const String kCountResendCode = "00:05";
+  static const String kCountResendCode = "00:59";
   static const String kDidntReceiveIt = "Didn't receive it?";
 
   static const String kResend = " Resend";

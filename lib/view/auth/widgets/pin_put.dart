@@ -3,14 +3,21 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pinput/pinput.dart';
 import 'package:smart_home/core/utils/app_colors.dart';
 
-class PinPut extends StatelessWidget {
-  const PinPut({super.key});
+class PinPut extends StatefulWidget {
+  final TextEditingController controller;
+   const PinPut({super.key,required this.controller});
 
+  @override
+  State<PinPut> createState() => _PinPutState();
+}
+
+class _PinPutState extends State<PinPut> {
   @override
   Widget build(BuildContext context) {
     return Pinput(
       length: 6,
       showCursor: true,
+      controller: widget.controller,
       separatorBuilder: (index) => SizedBox(width: 17.w),
       onCompleted: (code) {
         print('Code entered: $code');

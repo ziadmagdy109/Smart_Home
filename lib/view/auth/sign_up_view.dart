@@ -69,7 +69,7 @@ class _SignUpViewState extends State<SignUpView> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 15.h),
+                     /* SizedBox(height: 15.h),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -82,7 +82,7 @@ class _SignUpViewState extends State<SignUpView> {
                             controller: controller.phoneController,
                           ),
                         ],
-                      ),
+                      ),*/
                       SizedBox(height: 15.h),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -169,9 +169,9 @@ class _SignUpViewState extends State<SignUpView> {
                 ),
                 SizedBox(height: 30.h),
                 CustomButton(
-                  title: 'Sign Up',
+                  title: 'Send Code',
                   onPressed: () {
-                   controller.submit();
+                   controller.sendCode();
                   },
                 ),
               ],

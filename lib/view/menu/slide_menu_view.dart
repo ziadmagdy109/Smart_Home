@@ -10,6 +10,7 @@ import 'package:smart_home/view/auth/smart_home_sign_in_view.dart';
 import 'package:smart_home/view/notifications/notifications_view.dart';
 import 'package:smart_home/view/profile/edit_profile_view.dart';
 import 'package:smart_home/view_model/main_view_view_model.dart';
+import 'package:smart_home/view_model/user_view_model.dart';
 
 class SlideMenuView extends StatelessWidget {
   const SlideMenuView({super.key,});
@@ -64,17 +65,18 @@ class SlideMenuView extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Amira Mokhtar",
+                          "${Get.find<UserViewModel>().user?.username.split('@').first}",
                           style: TextStyle(
-                            fontSize: 16.sp,
+                            fontSize: 14.sp,
                             fontWeight: FontWeight.w600,
                             color: Colors.black87,
                           ),
+                          maxLines: 1,
                         ),
                         Text(
-                          "amiramokhtar@gmail.com",
+                          "${Get.find<UserViewModel>().user?.username}",
                           style: TextStyle(
-                            fontSize: 13.sp,
+                            fontSize: 12.sp,
                             color: Colors.grey[600],
                           ),
                         ),

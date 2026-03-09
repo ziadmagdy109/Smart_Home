@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+import 'package:get/get.dart';
+import 'package:smart_home/core/components/loading_indicator.dart';
 import 'package:smart_home/core/utils/app_constants.dart';
 import 'package:smart_home/view/home/widgets/custom_app_bar_home.dart';
 import 'package:smart_home/view/home/widgets/custom_nav_bar.dart';
@@ -9,6 +11,7 @@ import 'package:smart_home/view/home/widgets/list_devices_header.dart';
 import 'package:smart_home/view/home/widgets/list_home_grid.dart';
 import 'package:smart_home/view/home/widgets/list_home_header.dart';
 import 'package:smart_home/view/home/widgets/user_info_home.dart';
+import 'package:smart_home/view_model/home_view_model.dart';
 import 'package:tuya_home_sdk_flutter/tuya_home_sdk_flutter.dart';
 
 class HomeView extends StatefulWidget {
@@ -21,7 +24,15 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   bool isOpened = false;
+  final controller = Get.put(HomeViewModel());
 
+  @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      controller.listHomes();
+    },);
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +42,7 @@ class _HomeViewState extends State<HomeView> {
           username: 'karimsayffcih@gmail.com',
           type: 1,
         );
-*/
+    */
        /* final bool success = await TuyaHomeSdkFlutter.instance.registerByUserName(
             username: 'karimsayffcih@gmail.com',
             countryCode: '+1',
@@ -84,7 +95,7 @@ class _HomeViewState extends State<HomeView> {
          print(value.toString());
         },);*/
 
-/*
+    /*
        TuyaHomeSdkFlutter.instance.discoverDevices().listen(
               (device) {
             debugPrint("Discovered Device: ${device.name}");
@@ -149,9 +160,12 @@ class _HomeViewState extends State<HomeView> {
               SizedBox(height: 30.h),
               ListDevicesHeader(),
               SizedBox(height: 20.h),
-              DeviceWidget(title: AppConstants.kAirCondition),
-              SizedBox(height: 20.h),
-              DeviceWidget(title: AppConstants.kLampLight),
+              GetBuilder<HomeViewModel>(builder: (controller) => controller.isLoadingDevices? LoadingIndicator(): controller.devices.isEmpty? Text('No Devices Added Yet!'):Column(
+                spacing: 20,
+                children: [
+                  ...controller.devices.map((e) => DeviceWidget(title: e.name),)
+                ],
+              ),),
               SizedBox(height: 20.h),
               CustomNavBar(),
             ],

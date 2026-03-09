@@ -14,7 +14,7 @@ class ListHomeHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(AppConstants.kMyHome, style: AppTextStyles.font18wight700weight),
+        Text('My Homes', style: AppTextStyles.font18wight700weight),
         GestureDetector(
           onTap: () {
             Get.to(()=> ListRooms());
