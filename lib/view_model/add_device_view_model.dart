@@ -29,19 +29,25 @@ class AddDeviceViewModel extends GetxController{
       ssid = value??'Unknown Network';
       update();
       print(value);
+    },).timeout(Duration(seconds: 3),onTimeout: () {
+      dismissLoadingIndicator();
     },);
     }
+
+  final TextEditingController wifiSSid = TextEditingController();
 
   final TextEditingController password = TextEditingController();
 
   addDevice(ThingSmartDeviceModel device)async{
+    showLoadingIndicator();
     await TuyaHomeSdkFlutter.instance.startConfigBLEWifiDevice(
       homeId: Get.find<HomeViewModel>().selectedHome!.homeId,
-      deviceProductId: device.productId,
-      ssid: ssid,
+      deviceProductId: device.productId!,
+      ssid: wifiSSid.text,
       password: password.text,
       deviceUuid: device.uuid,
     ).then((value) {
+      dismissLoadingIndicator();
       Get.back();
 
       Get.find<HomeViewModel>().listDevices();

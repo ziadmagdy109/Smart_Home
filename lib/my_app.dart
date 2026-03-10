@@ -37,6 +37,9 @@ class _MyAppState extends State<MyApp> {
         theme: ThemeData(
           scaffoldBackgroundColor: AppColors.myWhite,
           fontFamily: 'Poppins',
+          bottomSheetTheme: BottomSheetThemeData(
+            backgroundColor: Colors.white
+          )
         ),
         debugShowCheckedModeBanner: false,
         home: Get.find<UserViewModel>().user != null? MainView(): OnBoardingView(),

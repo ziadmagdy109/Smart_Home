@@ -19,7 +19,9 @@ class _CountResendCodeState extends State<CountResendCode> {
   @override
   void initState() {
     super.initState();
-    ctrl.startTimer();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      ctrl.startTimer();
+    },);
   }
 
 

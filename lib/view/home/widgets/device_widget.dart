@@ -61,36 +61,47 @@ class _DeviceWidgetState extends State<DeviceWidget> {
               ),
             ],
           ),
-          FlutterSwitch(
-
-            height: 43.h,
-            toggleSize: 24.r,
-            valueFontSize: 12.r,
-            borderRadius: 10.r,
-            showOnOff: true,
-            activeText: "ON",
-            inactiveText: "Off",
-            activeTextColor: AppColors.myWhite,
-            inactiveTextColor: AppColors.myWhite,
-            activeColor: Color(0xffD9D9D9),
-            inactiveColor: Colors.grey.shade300,
-            activeToggleColor: AppColors.myWhite,
-            inactiveToggleColor: AppColors.myWhite,
-            value: isOn,
-            onToggle: (val) {
-              if(val){
-                TuyaHomeSdkFlutter.instance.publishDps(
-                  deviceId: widget.device.devId!,
-                  dps: {'1': false},
-                );
-              }else{
-                TuyaHomeSdkFlutter.instance.publishDps(
-                  deviceId: widget.device.devId!,
-                  dps: {'1': true},
-                );
-              }
-
+          GestureDetector(
+            onLongPress: () {
+              print('long');
+              TuyaHomeSdkFlutter.instance.removeDevice(deviceId: widget.device.devId!);
             },
+            child: FlutterSwitch(
+
+              height: 43.h,
+              toggleSize: 24.r,
+              valueFontSize: 12.r,
+              borderRadius: 10.r,
+              showOnOff: true,
+              activeText: "ON",
+              inactiveText: "Off",
+              activeTextColor: AppColors.myWhite,
+              inactiveTextColor: AppColors.myWhite,
+              activeColor: Color(0xffD9D9D9),
+              inactiveColor: Colors.grey.shade300,
+              activeToggleColor: AppColors.myWhite,
+              inactiveToggleColor: AppColors.myWhite,
+              value: isOn,
+              onToggle: (val) {
+                if(isOn){
+                  TuyaHomeSdkFlutter.instance.publishDps(
+                    deviceId: widget.device.devId!,
+                    dps: {'1': false},
+                  );
+                }else{
+                  TuyaHomeSdkFlutter.instance.publishDps(
+                    deviceId: widget.device.devId!,
+                    dps: {'1': true},
+                  );
+                }
+
+                setState(() {
+                  isOn = !isOn;
+                });
+
+
+              },
+            ),
           ),
         ],
       ),

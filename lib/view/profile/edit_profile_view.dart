@@ -33,71 +33,77 @@ class _EditProfileViewState extends State<EditProfileView> {
       appBar: CustomAppBar(title: "Edit Profile"),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
-        child: Column(
-          children: [
-            const EditProfileHeader(),
-            SizedBox(height: 24.h),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Name', style: AppTextStyles.font14weight500.copyWith(
-                  color: AppColors.c222
-                )),
-                SizedBox(height: 8.h),
-                CustomTextField(hint: 'Mohamed Ahmed', label: '',controller: controller.nameController,),
-              ],
-            ),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const EditProfileHeader(),
+              SizedBox(height: 24.h),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Name', style: AppTextStyles.font14weight500.copyWith(
+                    color: AppColors.c222
+                  )),
+                  SizedBox(height: 8.h),
+                  CustomTextField(hint: 'Mohamed Ahmed', label: '',controller: controller.nameController,),
+                ],
+              ),
+          
+              SizedBox(height: 16.h),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Email', style: AppTextStyles.font14weight500.copyWith(
+                      color: AppColors.c222
+                  )),
+                  SizedBox(height: 8.h),
+                  CustomTextField(
+                    readOnly:true,
+                    hint: 'info@company.com', label: '',controller: controller.emailController,),
+                ],
+              ),
+              SizedBox(height: 16.h),
+            /*  Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Address', style: AppTextStyles.font14weight500.copyWith(
+                      color: AppColors.c222
+                  )),
+                  SizedBox(height: 8.h),
+                  CustomTextField(hint: 'Cairo st .123', label: 'Address'),
+                ],
+              ),
+              SizedBox(height: 16.h),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Home Name', style: AppTextStyles.font14weight500.copyWith(
+                      color: AppColors.c222
+                  )),
+                  SizedBox(height: 8.h),
+                  CustomTextField(hint: 'My Main Home', label: 'Home Name'),
+                ],
+              ),*/
 
-            SizedBox(height: 16.h),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Email', style: AppTextStyles.font14weight500.copyWith(
-                    color: AppColors.c222
-                )),
-                SizedBox(height: 8.h),
-                CustomTextField(
-                  readOnly:true,
-                  hint: 'info@company.com', label: '',controller: controller.emailController,),
-              ],
+
+            ],
+          ),
+        ),
+      ),
+      bottomSheet:   Padding(
+        padding: const EdgeInsets.only(left: 20,right: 20,bottom: 50),
+        child: Row(
+          children: [
+            Expanded(
+              child: CustomOutlinedButton(title: AppConstants.kCancel, onPressed: (){
+                Get.back();
+              }),
             ),
-            SizedBox(height: 16.h),
-          /*  Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Address', style: AppTextStyles.font14weight500.copyWith(
-                    color: AppColors.c222
-                )),
-                SizedBox(height: 8.h),
-                CustomTextField(hint: 'Cairo st .123', label: 'Address'),
-              ],
-            ),
-            SizedBox(height: 16.h),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Home Name', style: AppTextStyles.font14weight500.copyWith(
-                    color: AppColors.c222
-                )),
-                SizedBox(height: 8.h),
-                CustomTextField(hint: 'My Main Home', label: 'Home Name'),
-              ],
-            ),*/
-          Spacer(),
-            Row(
-              children: [
-                Expanded(
-                  child: CustomOutlinedButton(title: AppConstants.kCancel, onPressed: (){
-                    Get.back();
-                  }),
-                ),
-                SizedBox(width: 16.w),
-                Expanded(
-                  child: CustomButton(title: 'Save',onPressed: () {
-                    controller.updateProfile();
-                  },),
-                ),
-              ],
+            SizedBox(width: 16.w),
+            Expanded(
+              child: CustomButton(title: 'Save',onPressed: () {
+                controller.updateProfile();
+              },),
             ),
           ],
         ),

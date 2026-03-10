@@ -19,7 +19,7 @@ class _AddDeviceDialogState extends State<AddDeviceDialog> {
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       controller.discoverDevices();
-      controller.getWifiInfo();
+    //  controller.getWifiInfo();
     },);
     super.initState();
   }
@@ -58,7 +58,7 @@ class _AddDeviceDialogState extends State<AddDeviceDialog> {
                 Get.dialog(Dialog(
                   backgroundColor: Colors.white,
                   child: Container(
-                    height: 300,
+                    height: 350,
                     width: double.infinity,
                     padding: EdgeInsets.all(20),
                     child: Column(children: [
@@ -67,12 +67,14 @@ class _AddDeviceDialogState extends State<AddDeviceDialog> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('You are connected to ${controller.ssid}',style: TextStyle(fontWeight: FontWeight.w400,color: Colors.grey.withOpacity(.8),fontSize: 10),),
+                       //   Text('You are connected to ${controller.ssid}',style: TextStyle(fontWeight: FontWeight.w400,color: Colors.grey.withOpacity(.8),fontSize: 10),),
                           Text('Make sure you enter your WIFI password to link the device.',style: TextStyle(fontWeight: FontWeight.w400,color: Colors.grey.withOpacity(.8), fontSize: 10),),
                         ],
                       ),
 
                       SizedBox(height: 10.h,),
+                      CustomTextField(hint: 'Your Wifi SSID', label: 'Wi-Fi SSID',controller: controller.wifiSSid,),
+                      SizedBox(height: 10,),
                       CustomTextField(hint: 'Your Wifi Password', label: 'Wi-Fi Password',controller: controller.password,),
                       SizedBox(height: 20.h,),
                       CustomButton(title: 'Add Device',onPressed: () {

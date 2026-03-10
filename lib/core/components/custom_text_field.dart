@@ -46,6 +46,9 @@ class CustomTextField extends StatelessWidget {
       obscureText: obscureText,
       enabled: enabled,
       cursorColor: AppColors.myBlack,
+      onTapOutside: (event) {
+        FocusScope.of(context).unfocus();
+      },
       decoration: InputDecoration(
         hintText: hint,
         labelText: label,
