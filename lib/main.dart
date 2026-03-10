@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:smart_home/my_app.dart';
 import 'package:tuya_home_sdk_flutter/tuya_home_sdk_flutter.dart';
+
+import 'view_model/user_view_model.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,6 +16,9 @@ void main() async{
         'app.tecorva.smarthome',
         isDebug: true,
     );
+
+    final userCtrl =  Get.put<UserViewModel>(UserViewModel() ,permanent: true);
+    await userCtrl.getUserInfo();
   }catch(e){
     print(e);
   }

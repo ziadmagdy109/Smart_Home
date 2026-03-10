@@ -6,7 +6,6 @@ import 'package:smart_home/core/utils/app_colors.dart';
 import 'package:smart_home/services/app_binding.dart';
 import 'package:smart_home/view/main_view/main_view.dart';
 import 'package:smart_home/view/on_boarding/on_boarding_view.dart';
-import 'package:tuya_home_sdk_flutter/tuya_home_sdk_flutter.dart';
 
 import 'view_model/user_view_model.dart';
 
@@ -18,26 +17,11 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final userCtrl = Get.put<UserViewModel>(UserViewModel() ,permanent: true);
   final AppBinding _appBinding = AppBinding();
-  bool isLoading = true;
-  bool isLoggedIn = false;
 
   @override
   void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async{
-      setState(() {
-        isLoading = true;
-        userCtrl.getUserInfo().then((value) {
-          isLoading = false;
-          if(value != null && value.isLogin){
-            isLoggedIn = true;
-          }else{
-            isLoggedIn = false;
-          }
-        },);
-      });
-    },);
+
     super.initState();
   }
 
@@ -55,7 +39,7 @@ class _MyAppState extends State<MyApp> {
           fontFamily: 'Poppins',
         ),
         debugShowCheckedModeBanner: false,
-        home: isLoading ? Center(child: LoadingIndicator(),): isLoggedIn? MainView(): OnBoardingView(),
+        home: Get.find<UserViewModel>().user != null? MainView(): OnBoardingView(),
       ),
     );
   }

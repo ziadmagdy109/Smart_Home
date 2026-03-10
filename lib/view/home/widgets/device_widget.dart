@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:smart_home/core/utils/app_colors.dart';
+import 'package:tuya_home_sdk_flutter/tuya_home_sdk_flutter.dart';
 
 class DeviceWidget extends StatefulWidget {
-  final String title;
-  const DeviceWidget({super.key, required this.title});
+  final ThingSmartDeviceModel device;
+  const DeviceWidget({super.key, required this.device});
 
   @override
   State<DeviceWidget> createState() => _DeviceWidgetState();
@@ -42,7 +43,7 @@ class _DeviceWidgetState extends State<DeviceWidget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                widget.title,
+                widget.device.name,
                 style: TextStyle(
                   color: isOn ? AppColors.myWhite : AppColors.myBlack,
                   fontWeight: FontWeight.w600,
@@ -77,9 +78,18 @@ class _DeviceWidgetState extends State<DeviceWidget> {
             inactiveToggleColor: AppColors.myWhite,
             value: isOn,
             onToggle: (val) {
-              setState(() {
-                isOn = val;
-              });
+              if(val){
+                TuyaHomeSdkFlutter.instance.publishDps(
+                  deviceId: widget.device.devId!,
+                  dps: {'1': false},
+                );
+              }else{
+                TuyaHomeSdkFlutter.instance.publishDps(
+                  deviceId: widget.device.devId!,
+                  dps: {'1': true},
+                );
+              }
+
             },
           ),
         ],

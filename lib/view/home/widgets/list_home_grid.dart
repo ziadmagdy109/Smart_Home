@@ -19,9 +19,16 @@ class _ListHomeGridState extends State<ListHomeGrid> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HomeViewModel>(
-      builder: (controller) => controller.isLoadingHomes ? LoadingIndicator() : controller.homes.isEmpty? Text('No Homes Added Yet!',style: AppTextStyles.font12weight400.copyWith(
-        color: Colors.grey
-      ),):GridView.builder(
+      builder: (controller) => controller.isLoadingHomes ? LoadingIndicator() : controller.homes.isEmpty? Column(
+        children: [
+
+          Image.asset('assets/images_home/homes_outlined.png',height: 100,),
+          SizedBox(height: 10.h,),
+          Text('No Homes Added Yet!',style: AppTextStyles.font12weight400.copyWith(
+            color: Colors.grey
+          ),),
+        ],
+      ):GridView.builder(
         padding: EdgeInsets.zero,
         physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
@@ -35,7 +42,10 @@ class _ListHomeGridState extends State<ListHomeGrid> {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              Get.to(()=> ListRooms());
+           //   Get.to(()=> ListRooms());
+              controller.selectedHome = controller.homes[index];
+              controller.update();
+              controller.listDevices();
             },
             child: Stack(
               children: [
@@ -45,10 +55,21 @@ class _ListHomeGridState extends State<ListHomeGrid> {
                     controller.homes[index].backgroundUrl??'',
                     errorBuilder: (context, error, stackTrace) => Image.asset(
                       "assets/images_home/home${index + 1}.png",
+                      fit: BoxFit.cover,
+                      width: double.infinity,
+                      height: double.infinity,
                     ),
                     fit: BoxFit.cover,
                     width: double.infinity,
                     height: double.infinity,
+                  ),
+                ),
+                Container(
+                  width: double.infinity,
+                  height: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(14.r),
+                    color: Colors.black.withOpacity(0.5),
                   ),
                 ),
                 Positioned(
@@ -61,6 +82,7 @@ class _ListHomeGridState extends State<ListHomeGrid> {
                         '${controller.homes[index].name}',
                         style: AppTextStyles.font14weight600.copyWith(
                           color: AppColors.myWhite,
+                          fontWeight: FontWeight.w700
                         ),
                       ),
                       SizedBox(height: 3.h,),
@@ -73,6 +95,13 @@ class _ListHomeGridState extends State<ListHomeGrid> {
                     ],
                   ),
                 ),
+
+                if(controller.selectedHome!.homeId == controller.homes[index].homeId)
+                Positioned(
+                    bottom: 10.h,
+                    right: 10.h,
+                    child:
+          Icon(Icons.check_circle,color: AppColors.myGreen,size: 20.r,))
               ],
             ),
           );

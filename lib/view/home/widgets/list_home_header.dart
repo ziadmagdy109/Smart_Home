@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:smart_home/core/components/custom_button.dart';
+import 'package:smart_home/core/components/custom_text_field.dart';
 import 'package:smart_home/core/utils/app_colors.dart';
 import 'package:smart_home/core/utils/app_constants.dart';
 import 'package:smart_home/core/utils/app_text_styles.dart';
+import 'package:smart_home/view/home/widgets/add_home_bottom_sheet.dart';
 import 'package:smart_home/view/roooms/list_rooms.dart';
+import 'package:smart_home/view_model/add_home_view_model.dart';
 
 class ListHomeHeader extends StatelessWidget {
   const ListHomeHeader({super.key});
@@ -17,7 +21,9 @@ class ListHomeHeader extends StatelessWidget {
         Text('My Homes', style: AppTextStyles.font18wight700weight),
         GestureDetector(
           onTap: () {
-            Get.to(()=> ListRooms());
+          //  Get.to(()=> ListRooms());
+
+            Get.bottomSheet(AddHomeBottomSheet());
           },
           child: Container(
             decoration: BoxDecoration(

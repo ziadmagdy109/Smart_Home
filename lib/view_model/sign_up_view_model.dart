@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -25,6 +27,23 @@ class SignUpViewModel extends APICrudServices {
       TextEditingController();
 
   final TextEditingController codeController = TextEditingController();
+
+  int seconds = 60;
+  Timer? timer;
+
+  void startTimer() {
+    seconds = 60;
+    update();
+    timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      if (seconds == 0) {
+        timer.cancel();
+      } else {
+        seconds--;
+        update();
+      }
+    });
+  }
+
 
   /* submit()async{
     if (formKey.currentState!.validate()) {
@@ -63,11 +82,16 @@ class SignUpViewModel extends APICrudServices {
           countryCode: '+20',
           type: 1,
         )
-            .then((value) {
-          dismissLoadingIndicator();
+            .then((value) async{
+
           if (value) {
+            await TuyaHomeSdkFlutter.instance.updateUserNickName(
+              nickname: nameController.text.trim(),
+            );
+            dismissLoadingIndicator();
             Get.to(() => VerifyCodeView());
           } else {
+            dismissLoadingIndicator();
             showSnackBar(message: 'User already exists', isError: true);
           }
         });

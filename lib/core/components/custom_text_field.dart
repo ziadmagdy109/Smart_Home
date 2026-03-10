@@ -15,6 +15,7 @@ class CustomTextField extends StatelessWidget {
   final int? minLines;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
+  final bool readOnly;
 
   const CustomTextField({super.key,
     required this.hint,
@@ -29,11 +30,13 @@ class CustomTextField extends StatelessWidget {
     this.minLines,
     this.prefixIcon,
     this.suffixIcon,
+    this.readOnly = false,
   });
 
   @override
   Widget build(BuildContext context) {
     return  TextFormField(
+      readOnly: readOnly,
       validator: validator,
       controller: controller,
       keyboardType: keyboardType,
@@ -46,6 +49,7 @@ class CustomTextField extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hint,
         labelText: label,
+        hintStyle: TextStyle(color: Colors.grey),
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         enabledBorder: OutlineInputBorder(

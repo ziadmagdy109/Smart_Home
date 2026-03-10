@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:smart_home/core/components/loading_indicator.dart';
 import 'package:smart_home/core/utils/app_colors.dart';
 import 'package:smart_home/core/utils/app_constants.dart';
 import 'package:smart_home/core/utils/app_text_styles.dart';
@@ -51,39 +52,39 @@ class SlideMenuView extends StatelessWidget {
               ),
               SizedBox(height: 40.h),
               // Profile header
-              Row(
-                children: [
-                  CircleAvatar(
-                    radius: 30.r,
-                    backgroundImage: const AssetImage(
-                      AppConstants.imageHomeProfile,
+              GetBuilder<UserViewModel>(
+                builder:(controller) => controller.user == null ? LoadingIndicator() :  Row(
+                  children: [
+                    CircleAvatar(
+                      radius: 30.r,
+                      backgroundImage: controller.user!.headIconUrl == null ? AssetImage(AppConstants.imageHomeProfile) : NetworkImage(controller.user!.headIconUrl!),
                     ),
-                  ),
-                  SizedBox(width: 12.w),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "${Get.find<UserViewModel>().user?.username.split('@').first}",
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black87,
+                    SizedBox(width: 12.w),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "${controller.user?.nickname}",
+                            style: TextStyle(
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.black87,
+                            ),
+                            maxLines: 1,
                           ),
-                          maxLines: 1,
-                        ),
-                        Text(
-                          "${Get.find<UserViewModel>().user?.username}",
-                          style: TextStyle(
-                            fontSize: 12.sp,
-                            color: Colors.grey[600],
+                          Text(
+                            "${controller.user?.username}",
+                            style: TextStyle(
+                              fontSize: 12.sp,
+                              color: Colors.grey[600],
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               SizedBox(height: 30.h),
               // Drawer items
@@ -125,8 +126,13 @@ class SlideMenuView extends StatelessWidget {
                 icon: "assets/images_menu/arrow-left-start-on-rectangle.svg",
                 title: "Log out",
                 color: AppColors.c005,
-                onTap: () {
-                  Get.offAll(()=> SmartHomeSignInView());
+                onTap: ()async {
+                  showLoadingIndicator();
+                 await Get.find<UserViewModel>().logout().then((value) {
+                    dismissLoadingIndicator();
+                    Get.offAll(()=> SmartHomeSignInView());
+                  },);
+
                   Get.find<MainViewViewModel>().drawerController.toggle!();
                   Get.find<APICrudServices>().tokenManager.logout();
                 },
