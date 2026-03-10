@@ -48,6 +48,8 @@ class SignInViewModel extends APICrudServices{
         if(value){
           Get.offAll(()=>MainView());
         }else{
+          print('DEEP');
+          print(value);
           showSnackBar(message:'Wrong email or password' , isError: true);
         }
       },);
